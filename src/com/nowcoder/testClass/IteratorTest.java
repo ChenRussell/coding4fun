@@ -21,7 +21,7 @@ public class IteratorTest {
         Iterator<String> iterator = list.iterator();
         while (iterator.hasNext()) {
             String next = iterator.next();
-            if (next.equals("e")) {
+            if (next.equals("a")) {
                 iterator.remove();
             }
             else System.out.println(next);
@@ -35,8 +35,16 @@ public class IteratorTest {
           此时hasNext()返回false所以不再调用next()方法调用checkForComodification()进行修改验证。
          */
         for (String s : list) {
-            if (s.equals("e")) list.remove(s);
+            if (s.equals("ee")) list.remove(s);
             else System.out.println(s);
+        }
+
+        System.out.println("****************");
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).equals("b")){
+                list.remove(i);
+            }
+            else System.out.println(list.get(i));
         }
     }
 }

@@ -658,8 +658,24 @@ public class TestDemo implements Cloneable{
         List<String> languages = Arrays.asList("java", "scala", "python");
         //before java8
         for (String each : languages) {
+//            languages.remove("scala");
             System.out.println(each);
         }
+
+        System.out.println(languages);
+        for (int i = 0; i < languages.size(); i++) {
+            System.out.println(languages.get(i));
+//            languages.remove("python");
+        }
+
+        Iterator<String> iterator = languages.iterator();
+        while (iterator.hasNext()) {
+            String str = iterator.next();
+            System.out.println(str);
+            if (str.equals("python"))
+                iterator.remove();
+        }
+
         //after java8
         languages.forEach(x -> System.out.println(x));
         languages.forEach(System.out::println);
