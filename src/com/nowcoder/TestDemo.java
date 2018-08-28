@@ -102,6 +102,8 @@ public class TestDemo implements Cloneable{
         Integer c = new Integer(127);
         Integer d = new Integer(127);
         System.out.println(c == d); // false
+        System.out.println(Integer.MAX_VALUE == ((1<<31)-1));
+        System.out.println(Integer.MAX_VALUE);
 
 
         // 自动拆箱的例子
