@@ -8,6 +8,7 @@ public class Ttwo2 {
 
     /**
      * BFS, 广度优先搜索
+     *
      * @param nums
      * @param len
      * @return
@@ -31,16 +32,16 @@ public class Ttwo2 {
     }
 
     int jumpV_official(int A[], int n) {
-        if(n<2)return 0;
-        int level=0,currentMax=0,i=0,nextMax=0;
+        if (n < 2) return 0;
+        int level = 0, currentMax = 0, i = 0, nextMax = 0;
 
-        while(i<=currentMax){		//nodes count of current level>0
+        while (i <= currentMax) {        //nodes count of current level>0
             level++;
-            for(;i<=currentMax;i++){	//traverse current level , and update the max reach of next level
-                nextMax=max(nextMax,A[i]+i);
-                if(nextMax>=n-1)return level;   // if last element is in level+1,  then the min jump=level
+            for (; i <= currentMax; i++) {    //traverse current level , and update the max reach of next level
+                nextMax = max(nextMax, A[i] + i);
+                if (nextMax >= n - 1) return level;   // if last element is in level+1,  then the min jump=level
             }
-            currentMax=nextMax;
+            currentMax = nextMax;
         }
         return 0;
     }
