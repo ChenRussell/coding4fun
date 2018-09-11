@@ -45,7 +45,7 @@ public class TestDemo implements Cloneable{
     /**
      * 测试 String类的方法
      *
-     * @param args
+     * @param
      */
     public static void testString(String str) {
         // System.out.println(str.value.length);
@@ -54,7 +54,7 @@ public class TestDemo implements Cloneable{
     /**
      * 测试小数的比较判断
      *
-     * @param args
+     * @param
      */
 
     @Test
@@ -69,7 +69,7 @@ public class TestDemo implements Cloneable{
     /**
      * 测试 字符
      *
-     * @param args
+     * @param
      */
 
     @Test
@@ -82,7 +82,7 @@ public class TestDemo implements Cloneable{
     /**
      * 测试 String类的replaceAll()方法
      *
-     * @param args
+     * @param
      */
     public static void testReplaceAll() {
         String a = "chenruichenrui";
@@ -799,6 +799,16 @@ public class TestDemo implements Cloneable{
         // 必须要实现Cloneable才能调用clone方法
         Object clone = testDemo.clone();
         System.out.println(testDemo == clone);  // false
+    }
+
+    @Test
+    public void testChinese() {
+        char c = '陈';
+        System.out.println(c);
+        System.out.println(Integer.valueOf(c));
+        System.out.println(Integer.valueOf(Character.MAX_VALUE));
+        System.out.println(Integer.MAX_VALUE);
+        System.out.println(1<<16);
     }
 
     public static void main(String[] args) {
