@@ -6,6 +6,8 @@ public class MyThread extends Thread {
 	public void run() {
 		// TODO Auto-generated method stub
 		System.out.println("Thread.");
+		System.out.println(1/0);
+		System.out.println("end");
 	}
 	
 	public static void main(String[] args) {

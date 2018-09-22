@@ -11,7 +11,7 @@ public class MaximumSubarray {
     public int maxSubArray(int[] A) {
         int maxSoFar = A[0], maxEndingHere = A[0];
         for (int i = 1; i < A.length; ++i) {
-            maxEndingHere = Math.max(maxEndingHere + A[i], A[i]);
+            maxEndingHere = Math.max(maxEndingHere + A[i], A[i]);   // 省略判断maxEndingHere是否小于0
             maxSoFar = Math.max(maxSoFar, maxEndingHere);
         }
         return maxSoFar;

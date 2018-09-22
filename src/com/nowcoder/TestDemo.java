@@ -20,7 +20,9 @@ import org.junit.Test;
 
 import com.nowcoder.testClass.SubClass;
 
-public class TestDemo implements Cloneable{
+public class TestDemo implements Cloneable, Serializable{
+
+    public static final int serialVersionUID = 123;
 
     /**
      * test
@@ -809,6 +811,34 @@ public class TestDemo implements Cloneable{
         System.out.println(Integer.valueOf(Character.MAX_VALUE));
         System.out.println(Integer.MAX_VALUE);
         System.out.println(1<<16);
+    }
+
+    @Test
+    public void testSerialize() throws IOException {
+        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("d:/1.csv"));
+        TestDemo testDemo = new TestDemo();
+        out.writeObject(testDemo);
+        out.close();
+    }
+
+    @Test
+    public void testDeserialize() throws IOException, ClassNotFoundException {
+        ObjectInputStream in = new ObjectInputStream(new FileInputStream("d:/1.csv"));
+        TestDemo testDemo = (TestDemo) in.readObject();
+        System.out.println(testDemo);
+    }
+
+    @Test
+    public void testBitCalculate() {
+        // &&，||等，双个的是逻辑运算符，只能用在布尔型变量；&，|单个是位运算符，都可以使用
+        System.out.println(3|9);
+        System.out.println(true & false);
+        System.out.println(true && false);
+    }
+
+    @Override
+    public String toString() {
+        return "TestDemo{this is TestDemo class, haha, fuck you}";
     }
 
     public static void main(String[] args) {
