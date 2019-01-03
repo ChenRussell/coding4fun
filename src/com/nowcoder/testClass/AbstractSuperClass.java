@@ -8,6 +8,8 @@ public abstract class AbstractSuperClass implements InterfaceSuperClass{
      */
     public static final int d = 2;
 
+    static void staticMathod(){}
+
     public AbstractSuperClass() {
 	}
 
