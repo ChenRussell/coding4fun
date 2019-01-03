@@ -1,7 +1,5 @@
 package com.nowcoder.swordoffer;
 
-import com.sun.org.apache.regexp.internal.RE;
-
 /**
  * Created by ChenRui on 2018/3/12
  * <p>
@@ -19,6 +17,18 @@ public class ReverseList {
             head.next = tail;
             tail = head;
             head = p;
+        }
+        return tail;
+    }
+
+    // Method2
+    public ListNode reverseList2(ListNode head) {
+        ListNode tail = null;
+        while (head != null) {
+            ListNode temp = head.next;  // 先将next节点存储起来
+            head.next = tail;
+            tail = head;
+            head = temp;
         }
         return tail;
     }

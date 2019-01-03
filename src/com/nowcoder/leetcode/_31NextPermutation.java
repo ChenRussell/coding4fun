@@ -1,5 +1,8 @@
 package com.nowcoder.leetcode;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * mplement next permutation, which rearranges numbers into the lexicographically next
  * greater permutation of numbers.
@@ -63,8 +66,25 @@ public class _31NextPermutation {
         nums[j] = temp;
     }
 
+    public void nextPermutation2(int arr[]) {
+        for (int i = arr.length-1; i >= 0; i--) {
+            for (int j = arr.length-1; j > i; j--) {
+                if (arr[i] < arr[j]) {
+                    swap(arr, i, j);
+                    Arrays.sort(arr, i + 1, arr.length);
+                    return;
+                }
+            }
+        }
+        Arrays.sort(arr);
+    }
+
     public static void main(String[] args) {
         _31NextPermutation nextPermutation = new _31NextPermutation();
-        nextPermutation.nextPermutation(new int[]{1, 3, 2, 1});
+        int[] arr = {1, 3, 2, 1};
+        nextPermutation.nextPermutation2(arr);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+        }
     }
 }

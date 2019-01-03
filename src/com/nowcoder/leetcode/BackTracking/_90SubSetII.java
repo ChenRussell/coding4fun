@@ -22,6 +22,7 @@ public class _90SubSetII {
 
     private void backTracking(List<List<Integer>> res, List<Integer> tempList, int[] nums, int start) {
 
+        // BOTH way to filter the duplicates
         if (!res.contains(tempList)) {
             res.add(new ArrayList<>(tempList));
         }

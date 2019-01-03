@@ -19,7 +19,7 @@ public class InOrder {
                 p = p.left;
             }
 
-            if (!stack.isEmpty()) {
+            if (!stack.isEmpty()) { // 出栈之前判断是否为空
                 p = stack.pop();
                 System.out.println(p.value);
                 p = p.right;

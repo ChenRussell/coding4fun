@@ -1,5 +1,7 @@
 package com.nowcoder.leetcode;
 
+import java.util.HashMap;
+
 /**
  * Created by ChenRui on 2018/9/15.
  *
