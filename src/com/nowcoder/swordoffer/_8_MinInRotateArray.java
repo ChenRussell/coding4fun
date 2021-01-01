@@ -11,7 +11,7 @@ package com.nowcoder.swordoffer;
 /**
  * 该题目考察的是二分查找的应用
  */
-public class MinInRotateArray {
+public class _8_MinInRotateArray {
     /**
      * 该方法稍微优化，时间复杂度还是O(n)
      * @param array
@@ -32,19 +32,23 @@ public class MinInRotateArray {
      */
     public int minNumberInRotateArray2(int[] array) {
         int low = 0, high = array.length - 1;
-        int middle = (low + high) / 2;
+        int middle;
 //        int middle = 0;
-        if (array[low] == array[middle] && array[middle] == array[high])
-            return minNumberInRotateArray(array);   // 此种情况只能用顺序查找，不能使用该方法
         middle = 0;
         while (array[low] >= array[high]) {      // 确保是旋转数组
+
             if (low + 1 == high) {
                 middle = high;
                 break;
             }
-            if (array[low] <= array[middle]) low = middle;
-            if(array[high] > array[middle]) high = middle;
+
             middle = (low + high) / 2;
+
+            if (array[low] == array[middle] && array[middle] == array[high])
+                return minNumberInRotateArray(array);   // 此种情况只能用顺序查找，不能使用该方法
+
+            if (array[low] <= array[middle]) low = middle;
+            else if(array[high] >= array[middle]) high = middle;
         }
         return array[middle];
     }
@@ -53,8 +57,9 @@ public class MinInRotateArray {
 
     public static void main(String[] args) {
 //        int[] array = {3, 4, 5, 1, 2};
-        int[] array = {3, 4, 5, 6, 7};
-        int i = new MinInRotateArray().minNumberInRotateArray2(array);
+        int[] array = {1, 0, 1, 1, 1};
+//        int[] array = {3, 4, 5, 6, 7};
+        int i = new _8_MinInRotateArray().minNumberInRotateArray2(array);
         System.out.println(i);
     }
 }

@@ -55,7 +55,7 @@ public class _41_2_FindContinuousSequence {
 
     public static void main(String[] args) {
         _41_2_FindContinuousSequence findContinuousSequence = new _41_2_FindContinuousSequence();
-        ArrayList<ArrayList<Integer>> res = findContinuousSequence.findContinuousSequence(1);
+        ArrayList<ArrayList<Integer>> res = findContinuousSequence.findContinuousSequence(100);
         for (ArrayList<Integer> re : res) {
             System.out.println(re);
         }

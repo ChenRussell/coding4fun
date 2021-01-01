@@ -6,7 +6,7 @@ package com.nowcoder.swordoffer;
  * 题目描述
  * 输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。
  */
-public class MergeList {
+public class _17_MergeList {
     public ListNode Merge(ListNode list1, ListNode list2) {
         ListNode headNode,root;
         if (list1 == null) return list2;
@@ -39,7 +39,7 @@ public class MergeList {
     }
 
     public static void main(String[] args) {
-        MergeList mergeList = new MergeList();
+        _17_MergeList mergeList = new _17_MergeList();
         ListNode listNode1 = new ListNode(1);
         listNode1.next = new ListNode(3);
         listNode1.next.next = new ListNode(5);

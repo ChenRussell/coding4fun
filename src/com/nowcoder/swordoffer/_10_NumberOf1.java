@@ -5,7 +5,7 @@ package com.nowcoder.swordoffer;
  * 题目描述
  * 输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。
  */
-public class NumberOf1 {
+public class _10_NumberOf1 {
     public int numberOf1(int n) {
         int flag = 1;
         int count = 0;
@@ -42,7 +42,7 @@ public class NumberOf1 {
     }
 
     public static void main(String[] args) {
-        NumberOf1 obj = new NumberOf1();
+        _10_NumberOf1 obj = new _10_NumberOf1();
         int res = obj.numberOf1(-7);
         System.out.println(res);
         System.out.println(Integer.toBinaryString(-7));

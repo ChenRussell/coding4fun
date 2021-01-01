@@ -30,7 +30,7 @@ public class _44IsContinuous {
     }
 
     public static void main(String[] args) {
-        int num[] = {1,2,3,6,0};
+        int num[] = {1,2,3,5,0};
         boolean res = isContinuous(num);
         System.out.println(res);
     }

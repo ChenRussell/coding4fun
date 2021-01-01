@@ -1,7 +1,5 @@
 package com.nowcoder.swordoffer;
 
-import java.util.Arrays;
-
 /**
  * Created by ChenRui on 2018/4/5
  * 题目描述
@@ -11,14 +9,14 @@ import java.util.Arrays;
  * 并期望旁边的正数会弥补它呢？例如:{6,-3,-2,7,-15,1,2,2},连续子向量的最大和为8(从第0个开始,到第3个为止)。
  * 你会不会被他忽悠住？(子向量的长度至少是1)
  */
-public class FindGreatestSumOfSubArray {
+public class _31_GreatestSumOfSubArrays {
 
     public int findGreatestSumOfSubArray(int[] array) {
         int sum = array[0];
         int max = Integer.MIN_VALUE;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] < max) max = array[i];
-        }
+//        for (int i = 0; i < array.length; i++) {
+//            if (array[i] < max) max = array[i];
+//        }
         for (int i = 1; i < array.length; i++) {
             if (sum + array[i] > 0) {
                 sum = sum + array[i];
@@ -31,7 +29,7 @@ public class FindGreatestSumOfSubArray {
 
     public static void main(String[] args) {
         int arr[] = {6,-3,-2,7,-15,1,2,2};
-        int res = new FindGreatestSumOfSubArray().findGreatestSumOfSubArray(arr);
+        int res = new _31_GreatestSumOfSubArrays().findGreatestSumOfSubArray(arr);
         System.out.println(res);
     }
 }

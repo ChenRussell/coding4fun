@@ -6,7 +6,7 @@ import java.util.Stack;
  * 题目描述
  * 用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。
  */
-public class QueueOfTwoStack {
+public class _7_QueueOfTwoStack {
     Stack<Integer> stack1 = new Stack<Integer>();
     Stack<Integer> stack2 = new Stack<Integer>();
 
@@ -28,7 +28,7 @@ public class QueueOfTwoStack {
     }
 
     public static void main(String[] args) {
-        QueueOfTwoStack queueOfTwoStack = new QueueOfTwoStack();
+        _7_QueueOfTwoStack queueOfTwoStack = new _7_QueueOfTwoStack();
         queueOfTwoStack.stack1.push(1);
         queueOfTwoStack.stack1.push(2);
         queueOfTwoStack.stack2.push(3);

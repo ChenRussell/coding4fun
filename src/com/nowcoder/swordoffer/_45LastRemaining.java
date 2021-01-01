@@ -32,7 +32,7 @@ public class _45LastRemaining {
     }
 
     public static void main(String[] args) {
-        int res = LastRemaining_Solution(3, 1);
+        int res = LastRemaining_Solution(3, 1);  // todo 检验正确性，这能行吗，怎么实现转圈？
         System.out.println(res);
     }
 }

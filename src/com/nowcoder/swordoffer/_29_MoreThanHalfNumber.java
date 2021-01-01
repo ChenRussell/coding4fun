@@ -6,7 +6,7 @@ package com.nowcoder.swordoffer;
  * 数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。例如输入一个长度为9的数组{1,2,3,2,2,2,5,4,2}。
  * 由于数字2在数组中出现了5次，超过数组长度的一半，因此输出2。如果不存在则输出0。
  */
-public class MoreThanHalfNum {
+public class _29_MoreThanHalfNumber {
     public int MoreThanHalfNum_Solution(int[] array) {
         int count = 1;
         int flag = array[0];
@@ -33,7 +33,7 @@ public class MoreThanHalfNum {
         int arr[] = {1, 2, 3, 2, 2, 2, 5, 4, 2};
         int arr2[] = {1, 2, 3, 2, 4, 2, 5, 2, 3};
         int arr3[] = {2,2,2,2,2,1,3,4,5};
-        int res = new MoreThanHalfNum().MoreThanHalfNum_Solution(arr3);
+        int res = new _29_MoreThanHalfNumber().MoreThanHalfNum_Solution(arr3);
         System.out.println(res);
     }
 }

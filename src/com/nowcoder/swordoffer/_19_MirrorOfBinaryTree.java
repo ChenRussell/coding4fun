@@ -5,7 +5,7 @@ package com.nowcoder.swordoffer;
  *
  * 操作给定的二叉树，将其变换为源二叉树的镜像。
  */
-public class MirrorBinaryTree {
+public class _19_MirrorOfBinaryTree {
 
     public void Mirror(TreeNode root) {
         if (root != null) {
@@ -23,7 +23,7 @@ public class MirrorBinaryTree {
         node.left = new TreeNode(1);
         node.right = new TreeNode(3);
 
-        MirrorBinaryTree obj = new MirrorBinaryTree();
+        _19_MirrorOfBinaryTree obj = new _19_MirrorOfBinaryTree();
         obj.Mirror(node);
         System.out.println(node.val);
         System.out.println(node.left.val);

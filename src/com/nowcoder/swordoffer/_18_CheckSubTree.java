@@ -6,7 +6,7 @@ package com.nowcoder.swordoffer;
  * 题目描述
  * 输入两棵二叉树A，B，判断B是不是A的子结构。（ps：我们约定空树不是任意一个树的子结构）
  */
-public class CheckSubTree {
+public class _18_CheckSubTree {
 
     /**
      * 这么写不行啊
@@ -68,7 +68,7 @@ public class CheckSubTree {
         treeNode2.left = null;
         treeNode2.right = null;
 
-        CheckSubTree checkSubTree = new CheckSubTree();
+        _18_CheckSubTree checkSubTree = new _18_CheckSubTree();
         boolean bool = checkSubTree.hasSubtree2(treeNode1, treeNode2);
         System.out.println(bool);
     }

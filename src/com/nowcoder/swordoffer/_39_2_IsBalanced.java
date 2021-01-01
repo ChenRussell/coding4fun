@@ -5,7 +5,7 @@ package com.nowcoder.swordoffer;
  * <p>
  * 输入一棵二叉树，判断该二叉树是否是平衡二叉树。
  */
-public class IsBalanced {
+public class _39_2_IsBalanced {
 
     public boolean IsBalanced_Solution(TreeNode root) {
 
@@ -26,7 +26,7 @@ public class IsBalanced {
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
 //        root.left.left = new TreeNode(3);
-        boolean res = new IsBalanced().IsBalanced_Solution(root);
+        boolean res = new _39_2_IsBalanced().IsBalanced_Solution(root);
         System.out.println(res);
     }
 }

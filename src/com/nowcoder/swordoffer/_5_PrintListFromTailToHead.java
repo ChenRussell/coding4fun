@@ -14,7 +14,7 @@ class ListNode {
     }
 }
 
-public class PrintListFromTailToHead {
+public class _5_PrintListFromTailToHead {
 
     ArrayList<Integer> integers = new ArrayList<Integer>();
 
@@ -38,7 +38,7 @@ public class PrintListFromTailToHead {
         listNode2.next = listNode3;
         listNode3.next = listNode4;
 //        System.out.println(listNode4.next);
-        ArrayList<Integer> integers = new PrintListFromTailToHead().printListFromTailToHead(listNode1);
+        ArrayList<Integer> integers = new _5_PrintListFromTailToHead().printListFromTailToHead(listNode1);
         integers.forEach(System.out::println);
     }
 }

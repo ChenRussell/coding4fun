@@ -7,7 +7,7 @@ package com.nowcoder.swordoffer;
  * 请实现一个函数，将一个字符串中的空格替换成“%20”。
  * 例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。
  */
-public class ReplaceBlankSpace {
+public class _4_ReplaceBlankSpace {
     public String replaceSpace(StringBuffer str) {
         return str.toString().replaceAll(" ", "%20");
     }
@@ -29,7 +29,7 @@ public class ReplaceBlankSpace {
 
     public static void main(String[] args) {
         StringBuffer stringBuffer = new StringBuffer("we are happy.");
-        String s = new ReplaceBlankSpace().replaceSpace(stringBuffer);
+        String s = new _4_ReplaceBlankSpace().replaceSpace(stringBuffer);
         System.out.println(s);
     }
 }

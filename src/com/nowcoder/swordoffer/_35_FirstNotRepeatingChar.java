@@ -7,7 +7,7 @@ package com.nowcoder.swordoffer;
  * 在一个字符串(1<=字符串长度<=10000，全部由字母组成)中找到第一个只出现一次的字符,并返回它的位置
  */
 
-public class _35FirstNotRepeatingChar {
+public class _35_FirstNotRepeatingChar {
 
     public static int firstNotRepeatingChar(String str) {
         char[] arr = str.toCharArray();

@@ -6,7 +6,7 @@ package com.nowcoder.SortAlgorithem;
 public class QuickSort {
 
     /**
-     * 麻痹,一样的代码得到的结果竟然不一样,你他妈是在逗我吗??????草
+     * 麻痹,一样的代码得到的结果竟然不一样,你他妈是在逗我吗??????草，问题出在arr[pivot]
      * @param arr
      * @param start
      * @param end
@@ -47,7 +47,7 @@ public class QuickSort {
             return;
         }
         int i = head, j = tail, pivot = arr[(head + tail) / 2];
-        while (i <= j) {
+        while (i <= j) {  // 这里需要加等于号，否则会无限递归
             while (arr[i] < pivot) {
                 ++i;
             }
@@ -72,8 +72,8 @@ public class QuickSort {
 //        int[] arr = {1, 3, 4, 6, 5, 4};
         int[] arr = new int[]{1, 4, 8, 2, 55, 3, 4, 8, 6, 4, 0, 11, 34, 90, 23, 54, 77, 9, 2, 9, 4, 10};
         QuickSort mergeSort = new QuickSort();
-        mergeSort.sort(arr, 0, arr.length - 1);
-//        QuickSort.qSort(arr, 0, arr.length-1);
+//        mergeSort.sort(arr, 0, arr.length - 1);
+        QuickSort.qSort(arr, 0, arr.length-1);
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }

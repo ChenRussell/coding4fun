@@ -26,7 +26,7 @@ package com.nowcoder.swordoffer;
  * 7
  */
 
-public class _36InversePairs {
+public class _36_InversePairs {
     public int InversePairs(int[] array) {
         if (array == null || array.length == 0) {
             return 0;

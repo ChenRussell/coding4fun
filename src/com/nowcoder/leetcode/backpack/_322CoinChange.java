@@ -46,8 +46,8 @@ public class _322CoinChange {
     }
 
     public static void main(String[] args) {
-        int coins[] = {2};
-        int amount = 4;
+        int coins[] = {1, 2, 5};
+        int amount = 11;
         int res = new _322CoinChange().coinChange(coins, amount);
         System.out.println(res);
     }

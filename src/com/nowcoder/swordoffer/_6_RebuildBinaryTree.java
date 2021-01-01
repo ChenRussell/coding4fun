@@ -15,7 +15,7 @@ class TreeNode {
     }
 }
 
-public class RebuildBinaryTree {
+public class _6_RebuildBinaryTree {
     public TreeNode reConstructBinaryTree(int[] pre, int[] in, int pleft, int pright, int ileft, int iright) {
         if (pleft > pright || ileft > iright) return null;  // µÝ¹é±ß½ç
 
@@ -53,7 +53,7 @@ public class RebuildBinaryTree {
 //        int[] pre = {1, 2, 3, 4, 5, 6, 7};
         int[] in = {4,7,2,1,5,3,8,6};
 //        int[] in = {3, 2, 4, 1, 6, 5, 7};
-        RebuildBinaryTree rebuildBinaryTree = new RebuildBinaryTree();
+        _6_RebuildBinaryTree rebuildBinaryTree = new _6_RebuildBinaryTree();
         TreeNode treeNode = rebuildBinaryTree.reConstructBinaryTree(pre, in);
         rebuildBinaryTree.preTraverse(treeNode);
 

@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * 如果输入如下矩阵： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
  * 则依次打印出数字1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10.
  */
-public class PrintMatrix {
+public class _20_PrintMatrix {
 
     public ArrayList<Integer> printMatrix(int [][] matrix) {
         ArrayList<Integer> arr = new ArrayList<>();
@@ -16,7 +16,7 @@ public class PrintMatrix {
         int row = 0;
         int column = matrix[row].length-1;
         while (row < matrix.length && column >=0) {
-            
+
             for (int i = matrix[row].length-1-column; i <= column; i++) {
                 arr.add(matrix[row][i]);
             }
@@ -32,7 +32,7 @@ public class PrintMatrix {
             for (int i = matrix.length-1-row-1; i > row && (matrix[row].length-1-column<column); i--) {
                 arr.add(matrix[i][matrix[row].length-1-column]);
             }
-            
+
             ++row;
             --column;
             if (row == matrix.length-1) break;
@@ -47,7 +47,7 @@ public class PrintMatrix {
                 {5,6,7,8}
                 };
         int arr2[][]={{1,2},{2,3},{3,4},{4,5}};
-        PrintMatrix obj = new PrintMatrix();
+        _20_PrintMatrix obj = new _20_PrintMatrix();
         ArrayList<Integer> list = obj.printMatrix(arr2);
         System.out.println(list);
     }

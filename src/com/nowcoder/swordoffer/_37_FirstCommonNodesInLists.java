@@ -6,7 +6,7 @@ package com.nowcoder.swordoffer;
  * 题目描述
  * 输入两个链表，找出它们的第一个公共结点。
  */
-public class _37FindFirstCommonNode {
+public class _37_FirstCommonNodesInLists {
 
     static public ListNode FindFirstCommonNode(ListNode pHead1, ListNode pHead2) {
         ListNode node1 = pHead1, node2 = pHead2;

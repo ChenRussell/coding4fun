@@ -11,7 +11,7 @@ import java.util.List;
  * 输入描述:
  * 输入一个字符串,长度不超过9(可能有字符重复),字符只包括大小写字母。
  */
-public class _28Permutation {
+public class _28_StringPermutation {
 
     public ArrayList<String> permutation(String str) {
         ArrayList<String> res = new ArrayList<>();
@@ -65,7 +65,7 @@ public class _28Permutation {
 
     public static void main(String[] args) {
         String str = "abc";
-//        ArrayList<String> res = new _28Permutation().permutation(str);
+//        ArrayList<String> res = new _28_StringPermutation().permutation(str);
         List<String> res = permutation2(str);
 //        System.out.println(res);
         for (String re : res) {

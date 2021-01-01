@@ -28,6 +28,11 @@ public class BackPackIII {
             for (int j = 1; j < dp.length; j++) {   // left-> right 表示可重复选择
                 if (j >= weight[i]) dp[j] = Math.max(dp[j], dp[j-weight[i]]+value[i]);
             }
+
+            for (int k = 0; k < dp.length; k++) {
+                System.out.print(dp[k] + " ");
+            }
+            System.out.println();
         }
 
         return dp[m];

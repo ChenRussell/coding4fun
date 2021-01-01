@@ -6,7 +6,7 @@ package com.nowcoder.swordoffer;
  * 给定一个double类型的浮点数base和int类型的整数exponent。求base的exponent次方。
  * 考点:　考虑全面，各种边界值
  */
-public class Power {
+public class _11_Power {
     public double power(double base, int exponent) {
         double result = 1;
         int n = Math.abs(exponent);
@@ -19,7 +19,7 @@ public class Power {
     }
 
     public static void main(String[] args) {
-        Power power = new Power();
+        _11_Power power = new _11_Power();
         double res = power.power(0, -2);
         System.out.println(res);
     }

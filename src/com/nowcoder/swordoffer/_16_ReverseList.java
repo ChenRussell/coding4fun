@@ -6,7 +6,7 @@ package com.nowcoder.swordoffer;
  * 题目描述
  * 输入一个链表，反转链表后，输出链表的所有元素。
  */
-public class ReverseList {
+public class _16_ReverseList {
 
     // 头插法,需要一个空指针
     public ListNode reverseList(ListNode head) {
@@ -34,7 +34,7 @@ public class ReverseList {
     }
 
     public static void main(String[] args) {
-        ReverseList obj = new ReverseList();
+        _16_ReverseList obj = new _16_ReverseList();
         ListNode listNode = new ListNode(2);
         listNode.next = new ListNode(3);
         listNode.next.next = new ListNode(4);

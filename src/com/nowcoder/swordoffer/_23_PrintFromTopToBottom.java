@@ -10,7 +10,7 @@ import java.util.Queue;
  * 题目描述
  * 从上往下打印出二叉树的每个节点，同层节点从左至右打印。
  */
-public class PrintFromTopToBottom {
+public class _23_PrintFromTopToBottom {
 
     public ArrayList<Integer> printFromTopToBottom(TreeNode root) {
 
@@ -28,7 +28,7 @@ public class PrintFromTopToBottom {
     }
 
     public static void main(String[] args) {
-        PrintFromTopToBottom obj = new PrintFromTopToBottom();
+        _23_PrintFromTopToBottom obj = new _23_PrintFromTopToBottom();
         TreeNode node = new TreeNode(2);
         node.left = new TreeNode(1);
         node.right = new TreeNode(4);
