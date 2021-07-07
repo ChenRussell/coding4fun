@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.cr</groupId>
+    <groupId>org.cr</groupId>
     <artifactId>coding-for-offer</artifactId>
     <version>0.0.1</version>
     <build>
@@ -16,7 +16,17 @@
             </plugin>
         </plugins>
     </build>
-    <packaging>war</packaging>
+    <modules>
+        <module>coding-juc</module>
+        <module>coding-basic-algorithm</module>
+        <module>coding-sword-offer</module>
+        <module>coding-practice</module>
+        <module>coding-leetcode</module>
+        <module>coding-design-pattern</module>
+        <module>coding-jvm</module>
+        <module>coding-others</module>
+    </modules>
+    <packaging>pom</packaging>
     <dependencies>
 
         <!-- Junit -->
