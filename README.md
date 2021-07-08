@@ -1,1 +1,2 @@
-## 刷题java代码
+## coding for offer
+project encoding: GBK
