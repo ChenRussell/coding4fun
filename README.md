@@ -1,2 +1,2 @@
-## coding for offer
+## coding for fun
 project encoding: GBK
