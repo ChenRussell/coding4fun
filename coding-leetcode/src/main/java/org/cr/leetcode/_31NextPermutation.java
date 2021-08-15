@@ -65,17 +65,45 @@ public class _31NextPermutation {
         nums[j] = temp;
     }
 
+    /**
+     * 思路：倒序找到第一个比当前元素小的元素i，交换元素位置，然后对i后面的元素重新做升序排序
+     * @param arr
+     */
     public void nextPermutation2(int arr[]) {
         for (int i = arr.length-1; i >= 0; i--) {
             for (int j = arr.length-1; j > i; j--) {
                 if (arr[i] < arr[j]) {
                     swap(arr, i, j);
-                    Arrays.sort(arr, i + 1, arr.length);
+                    //Arrays.sort(arr, i + 1, arr.length);
+                    quickSort(arr, i + 1, arr.length-1);
                     return;
                 }
             }
         }
-        Arrays.sort(arr);
+        //Arrays.sort(arr);
+        quickSort(arr, 0, arr.length-1);
+    }
+
+    public void quickSort(int[] nums, int low, int high){
+        if (low >= high || nums == null || nums.length <= 1) return;
+        int i=low, j= high, pivot = nums[(low + high) / 2];
+        while (i <= j) {
+            while (nums[i] < pivot) {
+                i++;
+            }
+            while (nums[j] > pivot) {
+                j--;
+            }
+            if (i < j) {
+                int temp = nums[i];
+                nums[i++] = nums[j];
+                nums[j--] = temp;
+            } else if (i == j) {
+                i++;
+            }
+        }
+        quickSort(nums, low, j);
+        quickSort(nums, i, high);
     }
 
     public static void main(String[] args) {

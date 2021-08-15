@@ -70,6 +70,11 @@ public class _45JumpGameII {
      * and set the new curEnd with curFarthest, then keep the above steps, as the following:
      * @param A
      * @return
+     *
+     * This is an implicit bfs solution.
+     * i == curEnd means you visited all the items on the current level.
+     * Incrementing jumps++ is like incrementing the level you are on.
+     * And curEnd = curFarthest is like getting the queue size (level size) for the next level you are traversing.
      */
     int jump2(int A[]) {
         int jumps = 0, curEnd = 0, curFarthest = 0;

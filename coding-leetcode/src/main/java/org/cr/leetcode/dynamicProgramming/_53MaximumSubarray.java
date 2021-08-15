@@ -7,7 +7,7 @@ package org.cr.leetcode.dynamicProgramming;
  * For example, given the array [-2,1,-3,4,-1,2,1,-5,4],
  * the contiguous subarray [4,-1,2,1] has the largest sum = 6.
  */
-public class MaximumSubarray {
+public class _53MaximumSubarray {
     public int maxSubArray(int[] A) {
         int maxSoFar = A[0], maxEndingHere = A[0];
         for (int i = 1; i < A.length; ++i) {
@@ -18,7 +18,7 @@ public class MaximumSubarray {
     }
 
     public static void main(String[] args) {
-        MaximumSubarray obj = new MaximumSubarray();
+        _53MaximumSubarray obj = new _53MaximumSubarray();
         int arr[] = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
         int res = obj.maxSubArray(arr);
         System.out.println(res);

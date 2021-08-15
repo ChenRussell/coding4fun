@@ -1,4 +1,4 @@
-package org.cr.leetcode;
+package org.cr.leetcode.linkedlist;
 
 /**
  * Merge two sorted linked lists and return it as a new list.
@@ -9,16 +9,15 @@ package org.cr.leetcode;
  * Input: 1->2->4, 1->3->4
  * Output: 1->1->2->3->4->4
  */
-public class _21MergeTwoSortedLists {
+class ListNode {
+    int val;
+    ListNode next;
 
-    class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
+    ListNode(int x) {
+        val = x;
     }
+}
+public class _21MergeTwoSortedLists {
 
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode head = new ListNode(-1);
@@ -36,6 +35,6 @@ public class _21MergeTwoSortedLists {
         }
         if (l1 == null) p.next = l2;
         if (l2 == null) p.next = l1;
-        return head.next;
+        return head.next; // 可避免单独比较第一个节点，简化代码
     }
 }

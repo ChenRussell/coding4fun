@@ -88,7 +88,7 @@ public class _3LongestSubstringWithoutRepeatingCharacters {
     public static void main(String[] args) {
         _3LongestSubstringWithoutRepeatingCharacters a = new _3LongestSubstringWithoutRepeatingCharacters();
 
-        int b = a.lengthOfLongestSubstring("abbcd");
+        int b = a.lengthOfLongestSubstring2("abbbbbbcd");
         System.out.println(b);
         System.out.println(a.str);
     }

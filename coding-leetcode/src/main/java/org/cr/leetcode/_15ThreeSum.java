@@ -55,7 +55,8 @@ public class _15ThreeSum {
 //        if (nums.length < 3) return res;
 //        int temp = nums[0] + nums[1] + nums[nums.length - 1];
 
-        for (int i = 0; i < nums.length; i++) {
+        for (int i = 0; i < nums.length-2; i++) {
+            if (i == 0 || (i > 0 && nums[i] != nums[i-1])) { // 这个条件很重要，可以不用每次都contains判断是否存在，时间可达标，否则Time Limit Exceeded
             int low = i + 1, high = nums.length - 1;
             while (low < high) {
                 int fuck = nums[i] + nums[low] + nums[high];
@@ -67,13 +68,12 @@ public class _15ThreeSum {
                     low++;
                     high--;
 
-                    if (!res.contains(list)) {
+                    //if (!res.contains(list)) // 与上述的条件对应，有上面的条件，这些就不需要判断
                         res.add(list);
-                    }
                 } else if (fuck < 0) low++;
                 else high--;
             }
-        }
+        }}
         return res;
     }
 

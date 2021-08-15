@@ -41,6 +41,7 @@ public class AnonymousInnerClass {
                     System.out.println("this is a anonymous class!" + afinal);   // 没定义成final类型不报错?????
                 }
             };
+            new Thread(runnable).start();
         }
 
 //        runnable.run();

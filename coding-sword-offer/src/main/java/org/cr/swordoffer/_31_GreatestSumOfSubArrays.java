@@ -13,23 +13,27 @@ public class _31_GreatestSumOfSubArrays {
 
     public int findGreatestSumOfSubArray(int[] array) {
         int sum = array[0];
-        int max = Integer.MIN_VALUE;
+        int max = sum;
 //        for (int i = 0; i < array.length; i++) {
 //            if (array[i] < max) max = array[i];
 //        }
         for (int i = 1; i < array.length; i++) {
             if (sum + array[i] > 0) {
                 sum = sum + array[i];
-                if (sum > max) max = sum;
+                max = Math.max(max, sum);
+            } else {
+                sum = 0;
+                max = Math.max(max, array[i]); // ÖØÒª£¡£¡
             }
-            else sum = 0;
         }
         return max;
     }
 
     public static void main(String[] args) {
         int arr[] = {6,-3,-2,7,-15,1,2,2};
-        int res = new _31_GreatestSumOfSubArrays().findGreatestSumOfSubArray(arr);
+        int arr2[] = {-2, 1};
+        int arr3[] = {1, -2};
+        int res = new _31_GreatestSumOfSubArrays().findGreatestSumOfSubArray(arr2);
         System.out.println(res);
     }
 }
