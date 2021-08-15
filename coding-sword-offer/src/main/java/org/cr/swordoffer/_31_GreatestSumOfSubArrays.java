@@ -12,12 +12,12 @@ package org.cr.swordoffer;
 public class _31_GreatestSumOfSubArrays {
 
     public int findGreatestSumOfSubArray(int[] array) {
-        int sum = array[0];
-        int max = sum;
+        int sum = 0;
+        int max = array[0];
 //        for (int i = 0; i < array.length; i++) {
 //            if (array[i] < max) max = array[i];
 //        }
-        for (int i = 1; i < array.length; i++) {
+        for (int i = 0; i < array.length; i++) {
             if (sum + array[i] > 0) {
                 sum = sum + array[i];
                 max = Math.max(max, sum);
@@ -33,7 +33,8 @@ public class _31_GreatestSumOfSubArrays {
         int arr[] = {6,-3,-2,7,-15,1,2,2};
         int arr2[] = {-2, 1};
         int arr3[] = {1, -2};
-        int res = new _31_GreatestSumOfSubArrays().findGreatestSumOfSubArray(arr2);
+        int arr4[] = {-1, 1, 2, 1};
+        int res = new _31_GreatestSumOfSubArrays().findGreatestSumOfSubArray(arr4);
         System.out.println(res);
     }
 }
