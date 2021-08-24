@@ -1,4 +1,4 @@
-package org.cr.leetcode.Bfs;
+package org.cr.leetcode.bfs;
 
 import java.util.ArrayList;
 import java.util.Arrays;

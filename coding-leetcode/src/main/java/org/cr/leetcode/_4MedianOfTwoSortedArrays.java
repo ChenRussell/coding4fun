@@ -21,7 +21,7 @@ import java.util.Collections;
  * <p>
  * The median is (2 + 3)/2 = 2.5
  */
-public class MedianOfTwoSortedArrays {
+public class _4MedianOfTwoSortedArrays {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 //        TreeSet<Integer> set = new TreeSet<>();
         ArrayList<Integer> set = new ArrayList<>();
@@ -56,7 +56,7 @@ public class MedianOfTwoSortedArrays {
     }
 
     public static void main(String[] args) {
-        MedianOfTwoSortedArrays obj = new MedianOfTwoSortedArrays();
+        _4MedianOfTwoSortedArrays obj = new _4MedianOfTwoSortedArrays();
         int[] nums1 = {1, 1};
         int[] nums2 = {2, 2};
         double md = obj.findMedianSortedArrays(nums1, nums2);

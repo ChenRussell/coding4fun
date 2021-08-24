@@ -1,4 +1,4 @@
-package org.cr.leetcode.Bfs;
+package org.cr.leetcode.bfs;
 
 import java.util.LinkedList;
 import java.util.Queue;

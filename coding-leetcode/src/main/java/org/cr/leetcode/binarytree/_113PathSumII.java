@@ -1,4 +1,4 @@
-package org.cr.leetcode.dfs;
+package org.cr.leetcode.binarytree;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +25,27 @@ import java.util.Stack;
  * ]
  */
 public class _113PathSumII {
+
+    public List<List<Integer>> pathSum2(TreeNode root, int targetSum) {
+        List<List<Integer>> res = new ArrayList<>();
+        Stack<Integer> stack = new Stack<>();
+        pathSum2(root, targetSum, res, stack);
+        return res;
+    }
+
+    public void pathSum2(TreeNode root, int targetSum, List<List<Integer>> res, Stack<Integer> stack) {
+        if (root == null) return;
+        stack.push(root.val);
+        if(targetSum == root.val && root.left == null && root.right == null) {
+            List<Integer> tmpList = new ArrayList<>(stack);
+//            tmpList.add(root.val);
+            res.add(tmpList);
+//            return;
+        }
+        pathSum2(root.left, targetSum-root.val, res, stack);
+        pathSum2(root.right, targetSum-root.val, res, stack);
+        stack.pop();
+    }
 
     public List<List<Integer>> pathSum(TreeNode root, int sum) {
         List<List<Integer>> res = new ArrayList<>();

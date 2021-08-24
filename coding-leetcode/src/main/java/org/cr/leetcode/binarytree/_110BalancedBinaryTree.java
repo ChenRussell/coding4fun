@@ -1,4 +1,4 @@
-package org.cr.leetcode.dfs;
+package org.cr.leetcode.binarytree;
 
 /**
  * Created by ChenRui on 18-4-7
@@ -56,6 +56,22 @@ public class _110BalancedBinaryTree {
         }
 
         return Math.max(lh, rh)+1;
+    }
+
+    /**
+     * create at 2021/8/23
+     * @param root
+     * @return
+     */
+    public boolean isBalanced2(TreeNode root) {
+        if (root == null) return true;
+        if(Math.abs(getDepth(root.left) - getDepth(root.right)) > 1) return false;
+        return isBalanced2(root.left) && isBalanced2(root.right);
+    }
+
+    public int getDepth(TreeNode root) {
+        if (root == null) return 0;
+        return Math.max(getDepth(root.left), getDepth(root.right)) + 1;
     }
 
     public static void main(String[] args) {

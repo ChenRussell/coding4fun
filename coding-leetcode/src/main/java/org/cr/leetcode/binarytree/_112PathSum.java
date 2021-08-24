@@ -1,4 +1,4 @@
-package org.cr.leetcode.dfs;
+package org.cr.leetcode.binarytree;
 
 
 /**
@@ -20,18 +20,13 @@ package org.cr.leetcode.dfs;
  * return true, as there exist a root-to-leaf path 5->4->11->2 which sum is 22.
  */
 
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
+public class _112PathSum {
 
-    TreeNode(int x) {
-        val = x;
+    public boolean hasPathSum2(TreeNode root, int targetSum) {
+        if(root == null) return false;
+        if(targetSum - root.val == 0 && root.left == null && root.right == null) return true;
+        return hasPathSum2(root.left, targetSum-root.val) || hasPathSum2(root.right,targetSum-root.val);
     }
-}
-public class _122PathSum {
-
-
 
     public boolean hasPathSum(TreeNode root, int sum) {
 
@@ -52,7 +47,7 @@ public class _122PathSum {
         node.left.left = new TreeNode(5);
         node.left.left.right = new TreeNode(5);
 
-        boolean res = new _122PathSum().hasPathSum(node, 12);
+        boolean res = new _112PathSum().hasPathSum(node, 12);
         System.out.println(res);
     }
 }

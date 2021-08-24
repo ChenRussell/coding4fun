@@ -1,4 +1,4 @@
-package org.cr.leetcode;
+package org.cr.leetcode.binarytree;
 
 /**
  * Created by ChenRui on 2018/9/28.
@@ -35,16 +35,6 @@ package org.cr.leetcode;
  * All of the nodes' values will be unique.
  * p and q are different and both values will exist in the binary tree.
  */
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode(int x) {
-        val = x;
-    }
-}
 
 public class _236LowestCommonAncestor {
 

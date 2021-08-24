@@ -8,7 +8,7 @@ package org.cr.leetcode.dynamicProgramming;
  * <p>
  * Another example is ")()())", where the longest valid parentheses substring is "()()", which has length = 4.
  */
-public class LongestValidParentheses {
+public class _32LongestValidParentheses {
     public int longestValidParentheses(String s) {
         int maxans = 0;
         int dp[] = new int[s.length()];
@@ -26,7 +26,7 @@ public class LongestValidParentheses {
     }
 
     public static void main(String[] args) {
-        LongestValidParentheses obj = new LongestValidParentheses();
+        _32LongestValidParentheses obj = new _32LongestValidParentheses();
         int result = obj.longestValidParentheses("()()(())");   //4
         System.out.println(result);
     }

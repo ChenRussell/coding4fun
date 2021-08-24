@@ -1,4 +1,4 @@
-package org.cr.leetcode;
+package org.cr.leetcode.binarytree;
 
 /**
  * Created by ChenRui on 2018/9/28.

@@ -27,9 +27,13 @@ package org.cr.leetcode.dynamicProgramming;
  * <p>
  * Output: "bb"
  */
-public class LongestPalindromicSubstring {
+public class _5LongestPalindromicSubstring {
     /**
      * ¶¯Ì¬¹æ»®
+     *
+     * dp(i, j) represents whether s(i ... j) can form a palindromic substring,
+     * dp(i, j) is true when s(i) equals to s(j) and s(i+1 ... j-1) is a palindromic substring.
+     * When we found a palindrome, check if it's the longest one. Time complexity O(n^2).
      *
      * @param s
      * @return
@@ -70,8 +74,33 @@ public class LongestPalindromicSubstring {
         return result;
     }
 
+
+    private int lo, maxLen;
+    public String longestPalindrome_voted(String s) {
+        int len = s.length();
+        if (len < 2)
+            return s;
+
+        for (int i = 0; i < len-1; i++) {
+            extendPalindrome(s, i, i);  //assume odd length, try to extend Palindrome as possible
+            extendPalindrome(s, i, i+1); //assume even length.
+        }
+        return s.substring(lo, lo + maxLen);
+    }
+
+    private void extendPalindrome(String s, int j, int k) {
+        while (j >= 0 && k < s.length() && s.charAt(j) == s.charAt(k)) {
+            j--;
+            k++;
+        }
+        if (maxLen < k - j - 1) {
+            lo = j + 1;
+            maxLen = k - j - 1;
+        }
+    }
+
     public static void main(String[] args) {
-        LongestPalindromicSubstring obj = new LongestPalindromicSubstring();
+        _5LongestPalindromicSubstring obj = new _5LongestPalindromicSubstring();
         String str = obj.longestPalindrome2("abcdcb");
         System.out.println(str);
     }
