@@ -1,12 +1,16 @@
 package org.cr.SortAlgorithem;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 /**
  * Created by ChenRui on 18-3-12
  */
 public class QuickSort {
 
     /**
-     * 麻痹,一样的代码得到的结果竟然不一样,你他妈是在逗我吗??????草，问题出在arr[pivot]
+     * 麻痹,一样的代码得到的结果竟然不一样,你他妈是在逗我吗??????草
+     * -- 问题出在arr[pivot], 下标对应的值可能发生了变化
      * @param arr
      * @param start
      * @param end
@@ -64,16 +68,40 @@ public class QuickSort {
                 ++i;
             }
         }
+        System.out.println(Arrays.stream(arr).boxed().collect(Collectors.toList()));
         qSort(arr, head, j);
         qSort(arr, i, tail);
     }
 
+    public static void qSortV2(int[] arr, int head, int tail) {
+        if (head >= tail) return;
+        int index = partition(arr, head, tail);
+        System.out.println(Arrays.stream(arr).boxed().collect(Collectors.toList()));
+        qSortV2(arr, head, index-1);
+        qSortV2(arr, index+1, tail);
+    }
+
+    static int partition(int[] arr, int start, int end) {
+        int temp;
+        if (start < end)
+            temp = arr[start];
+        else return start;
+        while (start < end) {
+            while (start < end && arr[end] > temp) end--;
+            if (start < end) arr[start++] = arr[end];
+            while (start < end && arr[start] < temp) start++;
+            if (start < end) arr[end--] = arr[start];
+        }
+        arr[start] = temp;
+        return start;
+    }
+
     public static void main(String[] args) {
-//        int[] arr = {1, 3, 4, 6, 5, 4};
-        int[] arr = new int[]{1, 4, 8, 2, 55, 3, 4, 8, 6, 4, 0, 11, 34, 90, 23, 54, 77, 9, 2, 9, 4, 10};
+        int[] arr = {4, 5, 1, 6, 2, 7, 3, 8};
+//        int[] arr = new int[]{1, 4, 8, 2, 55, 3, 4, 8, 6, 4, 0, 11, 34, 90, 23, 54, 77, 9, 2, 9, 4, 10};
         QuickSort mergeSort = new QuickSort();
 //        mergeSort.sort(arr, 0, arr.length - 1);
-        QuickSort.qSort(arr, 0, arr.length-1);
+        QuickSort.qSortV2(arr, 0, arr.length-1);
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }

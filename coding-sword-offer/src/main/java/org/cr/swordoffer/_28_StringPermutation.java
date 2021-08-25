@@ -65,8 +65,8 @@ public class _28_StringPermutation {
 
     public static void main(String[] args) {
         String str = "abc";
-//        ArrayList<String> res = new _28_StringPermutation().permutation(str);
-        List<String> res = permutation2(str);
+        ArrayList<String> res = new _28_StringPermutation().permutation(str);
+//        List<String> res = permutation2(str);
 //        System.out.println(res);
         for (String re : res) {
             System.out.println(re);

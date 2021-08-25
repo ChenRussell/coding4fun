@@ -78,4 +78,7 @@ public class _30_KLeastNumbers {
         ArrayList<Integer> res = new _30_KLeastNumbers().GetLeastNumbers_Solution(input, k);
         System.out.println(res);
     }
+    // 4,5,1,3,2, 7,6,8
+    // 1, 5,4,3,2, 6,7,8
+    // 1, 2,3,4,5, 6,7,8
 }

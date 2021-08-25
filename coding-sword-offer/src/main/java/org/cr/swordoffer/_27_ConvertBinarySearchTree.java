@@ -9,7 +9,7 @@ package org.cr.swordoffer;
  */
 public class _27_ConvertBinarySearchTree {
 
-    TreeNode lastNodeInList = null;     // 定义一个全局变量，如果是参数传入的话带不回来
+    TreeNode lastNodeInList = null;     // 定义一个全局变量，如果是参数传入的话带不回来;用来指向当前遍历节点的前一个节点
 
     public TreeNode convert(TreeNode pRootOfTree) {
 

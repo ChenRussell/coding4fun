@@ -1,5 +1,7 @@
 package org.cr.juc.artOfJavaConcurrency.chapter05;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -17,10 +19,12 @@ public class FairAndUnfairTest {
     private static Lock           unfairLock = new ReentrantLock2(false);
     private static CountDownLatch start;
 
+    @Test
     public void fair() {
         testLock(fairLock);
     }
 
+    @Test
     public void unfair() {
         testLock(unfairLock);
     }
