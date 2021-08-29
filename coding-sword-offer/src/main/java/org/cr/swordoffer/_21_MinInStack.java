@@ -17,7 +17,7 @@ public class _21_MinInStack {
     public void push(int node) {
         s1.push(node);
         if (node < min)  s2.push(node);
-        else s2.push(min);
+        else s2.push(min); // 这种写法有问题，当最小值pop后，并没有更新最小值
     }
 
     public void pop() {

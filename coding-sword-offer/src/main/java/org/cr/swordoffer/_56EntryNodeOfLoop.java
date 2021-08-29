@@ -23,7 +23,7 @@ public class _56EntryNodeOfLoop {
             if (fastNode == slowNode) break;
         }
 
-        if (fastNode == null) return null;
+        if (fastNode == null) return null; // 这里有问题，如果while循环是因为fastNode.next==null退出，也应该return null;
 
         slowNode = pHead;
         // 起点到入口的距离等于相遇点到入口的距离
