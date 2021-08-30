@@ -1,5 +1,7 @@
 package org.cr.leetcode.dfs;
 
+import org.cr.leetcode.binarytree.TreeNode;
+
 /**
  * Created by ChenRui on 18-4-7
  *

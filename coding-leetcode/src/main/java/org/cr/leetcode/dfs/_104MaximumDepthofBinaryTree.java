@@ -1,5 +1,7 @@
 package org.cr.leetcode.dfs;
 
+import org.cr.leetcode.binarytree.TreeNode;
+
 /**
  * Created by ChenRui on 18-4-7
  * Given a binary tree, find its maximum depth.
@@ -16,6 +18,7 @@ package org.cr.leetcode.dfs;
  *    15   7
  * return its depth = 3.
  */
+
 public class _104MaximumDepthofBinaryTree {
 
     public int maxDepth(TreeNode root) {
