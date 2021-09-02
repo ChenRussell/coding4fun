@@ -1,4 +1,4 @@
-package org.cr.leetcode;
+package org.cr.leetcode.linkedlist;
 
 /**
  * Created by ChenRui on 18-3-4
@@ -15,16 +15,7 @@ package org.cr.leetcode;
  * Explanation: 342 + 465 = 807.
  */
 
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
-    }
-}
-
-public class AddTwoNumbers {
+public class _2AddTwoNumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode headNode = new ListNode(0);
         ListNode h = headNode;
@@ -134,7 +125,7 @@ public class AddTwoNumbers {
         listNode2.next = new ListNode(6);
         listNode2.next.next = new ListNode(4);
         listNode2.next.next.next = null;
-        ListNode listNode = new AddTwoNumbers().addTwoNumbers2(listNode1, listNode2);
+        ListNode listNode = new _2AddTwoNumbers().addTwoNumbers2(listNode1, listNode2);
         while (listNode != null) {
 //            listNode = listNode.next;
             System.out.println(listNode.val);

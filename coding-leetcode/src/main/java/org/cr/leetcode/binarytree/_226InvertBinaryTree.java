@@ -1,0 +1,50 @@
+package org.cr.leetcode.binarytree;
+
+/**
+ * @author chenrui.a@mininglamp.com
+ * @project coding4fun
+ * @date 2021/09/01
+ *
+ * Given the root of a binary tree, invert the tree, and return its root.
+ *
+ *
+ *
+ * Example 1:
+ *
+ *
+ * Input: root = [4,2,7,1,3,6,9]
+ * Output: [4,7,2,9,6,3,1]
+ * Example 2:
+ *
+ *
+ * Input: root = [2,1,3]
+ * Output: [2,3,1]
+ * Example 3:
+ *
+ * Input: root = []
+ * Output: []
+ *
+ *
+ * Constraints:
+ *
+ * The number of nodes in the tree is in the range [0, 100].
+ * -100 <= Node.val <= 100
+ */
+public class _226InvertBinaryTree {
+
+    public TreeNode invertTree(TreeNode root) {
+        invert(root);
+        return root;
+    }
+
+    private void invert(TreeNode node) {
+        if (node != null) {
+            TreeNode tmpNode = node.left;
+            node.left = node.right;
+            node.right = tmpNode;
+
+            invert(node.left);
+            invert(node.right);
+        }
+    }
+}
