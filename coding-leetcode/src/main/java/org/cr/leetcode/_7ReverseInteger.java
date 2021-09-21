@@ -22,7 +22,7 @@ package org.cr.leetcode;
  * within the 32-bit signed integer range. For the purpose of this problem,
  * assume that your function returns 0 when the reversed integer overflows.
  */
-public class ReverseInteger {
+public class _7ReverseInteger {
 
     public int reverse(int x) {
         StringBuffer sb = new StringBuffer();
@@ -64,7 +64,7 @@ public class ReverseInteger {
     }
 
     public static void main(String[] args) {
-        ReverseInteger obj = new ReverseInteger();
+        _7ReverseInteger obj = new _7ReverseInteger();
         int res = obj.reverse(120);
         System.out.println(res);
     }

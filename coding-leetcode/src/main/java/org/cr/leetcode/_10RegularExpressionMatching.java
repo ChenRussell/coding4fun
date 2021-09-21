@@ -23,7 +23,7 @@ package org.cr.leetcode;
  * isMatch("ab", ".*") ¡ú true
  * isMatch("aab", "c*a*b") ¡ú true
  */
-public class RegularExpressionMatching {
+public class _10RegularExpressionMatching {
     public boolean isMatch(String s, String p) {
         if (p.isEmpty()) return s.isEmpty();
         if(s.equals(p)) return true;
@@ -44,7 +44,7 @@ public class RegularExpressionMatching {
     }
 
     public static void main(String[] args) {
-        RegularExpressionMatching obj = new RegularExpressionMatching();
+        _10RegularExpressionMatching obj = new _10RegularExpressionMatching();
         boolean bool = obj.isMatch("ab", ".*");
         System.out.println(bool);
     }
