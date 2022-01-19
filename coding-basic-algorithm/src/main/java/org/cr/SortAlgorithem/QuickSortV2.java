@@ -41,7 +41,7 @@ public class QuickSortV2 {
     public static void main(String[] args) {
         QuickSortV2 quickSortV2 = new QuickSortV2();
         int arr[] = new int[]{3,5,3,0,8,6,1,5,8,6,2,4,9,4,7,0,1,8,9,7,3,1,2,5,9,7,4,0,2,6};
-        quickSortV2.quickSort_20210825(arr, 0 ,arr.length-1);
+        quickSortV2.quickSort_20220118(arr, 0 ,arr.length-1);
         System.out.println(Arrays.toString(arr));
     }
 
@@ -62,5 +62,35 @@ public class QuickSortV2 {
         }
         arr[start] = temp;
         return start;
+    }
+
+    public void quickSort_20220118(int[] arr, int start, int end) {
+        int index = partition_20220118(arr, start, end);
+        if (index >= 0) {
+            quickSort_20220118(arr, start, index - 1);
+            quickSort_20220118(arr, index + 1, end);
+        }
+    }
+
+    private int partition_20220118(int[] arr, int start, int end) {
+        if (start >= end) return -1;
+        int temp = arr[start];
+        int i = start, j = end;
+        while (i < j) {
+            while (arr[j] >= temp && i < j) {
+                j--;
+            }
+            if (i < j) {
+                arr[i++] = arr[j];
+            }
+            while (arr[i] <= temp && i < j) {
+                i++;
+            }
+            if (i < j) {
+                arr[j--] = arr[i];
+            }
+        }
+        arr[i] = temp;
+        return i;
     }
 }

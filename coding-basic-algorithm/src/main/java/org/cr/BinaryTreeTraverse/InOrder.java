@@ -34,6 +34,22 @@ public class InOrder {
         node.right = new TreeNode(2);
         node.right.left = new TreeNode(4);
         node.left.right = null;
-        inOrder(node);
+        inOrder_20220118(node);
+    }
+
+    public static void inOrder_20220118(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode p = root;
+        while (p != null || !stack.isEmpty()) {
+            while (p != null) {
+                stack.push(p);
+                p = p.left;
+            }
+            if (!stack.isEmpty()) {
+                p = stack.pop();
+                System.out.println(p.value);
+                p = p.right;
+            }
+        }
     }
 }

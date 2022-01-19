@@ -67,7 +67,8 @@ public class MergeSort {
         int[] arr = {1, 3, 4, 6, 5, 4};
         MergeSort mergeSort = new MergeSort();
 //        mergeSort.merge(arr,0 ,arr.length-1);
-        MergeSort.mergeSort_practice(arr);
+        //MergeSort.mergeSort_practice(arr);
+        mergeSort.mergeSortPractice_20220118(arr);
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i]+" ");
         }
@@ -88,6 +89,33 @@ public class MergeSort {
         mergeSort_practice(res, arr, start1, end1);
         mergeSort_practice(res, arr, start2, end2);
 
+        int index = start;
+        while (start1 <= end1 && start2 <= end2) {
+            res[index++] = arr[start1] < arr[start2] ? arr[start1++] : arr[start2++];
+        }
+        while (start1 <= end1) {
+            res[index++] = arr[start1++];
+        }
+        while (start2 <= end2) {
+            res[index++] = arr[start2++];
+        }
+    }
+
+    public void mergeSortPractice_20220118(int[] arr) {
+        int[] res = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            res[i] = arr[i];
+        }
+        mergeSort_20220118(arr, res, 0, arr.length - 1);
+    }
+
+    public void mergeSort_20220118(int[] arr, int[] res, int start, int end) {
+        if (start >= end) return;
+        int mid = (start + end) >> 1;
+        mergeSort_20220118(res, arr, start, mid);
+        mergeSort_20220118(res, arr, mid + 1, end);
+
+        int start1 = start, start2 = mid + 1, end1 = mid, end2 = end;
         int index = start;
         while (start1 <= end1 && start2 <= end2) {
             res[index++] = arr[start1] < arr[start2] ? arr[start1++] : arr[start2++];

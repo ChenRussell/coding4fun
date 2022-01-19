@@ -63,6 +63,32 @@ public class PostOrder {
         node.right.left = new TreeNode(4);
         node.left.right = null;
 //        postOrder(node);
-        postOrderRecursion(node);
+//        postOrderRecursion(node);
+        postOrder_20220118(node);
+    }
+
+
+    public static void postOrder_20220118(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode p = root, lastVisited = null;
+        while (p != null) {
+            stack.push(p);
+            p = p.left;
+        }
+
+        while (!stack.isEmpty()) {
+            TreeNode head = stack.pop();
+            if (head.right == null || head.right == lastVisited) {
+                System.out.println(head.value);
+                lastVisited = head;
+            } else {
+                stack.push(head);
+                p = head.right;
+                while (p != null) {
+                    stack.push(p);
+                    p = p.left;
+                }
+            }
+        }
     }
 }

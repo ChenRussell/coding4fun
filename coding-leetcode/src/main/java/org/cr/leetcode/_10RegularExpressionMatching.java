@@ -25,7 +25,7 @@ package org.cr.leetcode;
  */
 public class _10RegularExpressionMatching {
     public boolean isMatch(String s, String p) {
-        if (p.isEmpty()) return s.isEmpty();
+        if (p.isEmpty()) return s.isEmpty(); // 这个地方很关键，判断p是否为空，而不是判断s是否为空
         if(s.equals(p)) return true;
         boolean firstMatch = false;
         if (!s.isEmpty() && (s.charAt(0) == p.charAt(0) || p.charAt(0) == '.')) {

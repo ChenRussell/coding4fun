@@ -52,7 +52,7 @@ public class _7ReverseInteger {
             int tail = x % 10;
             int newResult = result * 10 + tail;
             //If overflow exists, the new result will not equal previous one.
-            //No flags needed. No hard code like 0xf7777777 needed.
+            //No flags needed. No hard code like 0x7fffffff needed.
             if ((newResult - tail) / 10 != result) {
                 return 0;
             }
@@ -65,7 +65,8 @@ public class _7ReverseInteger {
 
     public static void main(String[] args) {
         _7ReverseInteger obj = new _7ReverseInteger();
-        int res = obj.reverse(120);
+        int res = obj.reverse2(-120);
         System.out.println(res);
+        System.out.println(Integer.MAX_VALUE);
     }
 }

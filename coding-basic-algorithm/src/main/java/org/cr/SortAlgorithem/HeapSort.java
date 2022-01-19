@@ -56,7 +56,7 @@ public class HeapSort {
     public static void main(String[] args) {
         HeapSort heapSort = new HeapSort();
         int[] arr = new int[]{3, 5, 3, 0, 8, 6, 1, 5, 8, 6, 2, 4, 9, 4, 7, 0, 1, 8, 9, 7, 3, 1, 2, 5, 9, 7, 4, 0, 2, 6};
-        heapSort.heapSort_practice(arr);
+        heapSort.heapSort_practice20220117(arr);
         System.out.println(Arrays.toString(arr));
     }
 
@@ -93,5 +93,33 @@ public class HeapSort {
         int temp = arr[left];
         arr[left] = arr[right];
         arr[right] = temp;
+    }
+
+    public void heapSort_practice20220117(int[] arr) {
+        makeHeap_practice20220117(arr);
+        for (int i = 0; i < arr.length; i++) {
+            swap(arr, 0, arr.length - 1 - i);
+            adjustHeap_practice20220117(arr, 0, arr.length - 2 - i);
+        }
+    }
+
+    private void adjustHeap_practice20220117(int[] arr, int start, int end) {
+        if (start >= end) return;
+        int leftChild = 2 * start + 1;
+        int rightChild = 2 * start + 2;
+        if (leftChild > end) return;
+        int max = leftChild;
+        if (rightChild <= end && arr[max] < arr[rightChild]) max = rightChild;
+        if (arr[start] < arr[max]) {
+            swap(arr, start, max);
+            adjustHeap_practice20220117(arr, max, end);
+        }
+    }
+
+    private void makeHeap_practice20220117(int[] arr) {
+        int lastIndex = (arr.length -1) / 2;
+        for (int i = lastIndex; i >= 0; i--) {
+            adjustHeap_practice20220117(arr, i, arr.length - 1);
+        }
     }
 }
