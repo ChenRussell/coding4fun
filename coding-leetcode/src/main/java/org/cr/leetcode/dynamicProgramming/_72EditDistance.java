@@ -14,6 +14,8 @@ package org.cr.leetcode.dynamicProgramming;
 public class _72EditDistance {
 
     /**
+     * 与{@link _1143LongestCommonSubsequence}十分类似
+     *
      * Let following be the function definition :-
      *
      * f(i, j) := minimum cost (or steps) required to convert first i characters of word1 to first j characters of word2
