@@ -13,7 +13,7 @@ public class _11_Power {
         for (int i = 0; i < n; i++) {
             result *= base;
         }
-        if (base == 0) return 0;
+        //if (base == 0) return 0; // 0 ^ 0 = 1
         if (exponent<0) return 1/result;
         return result;
     }
