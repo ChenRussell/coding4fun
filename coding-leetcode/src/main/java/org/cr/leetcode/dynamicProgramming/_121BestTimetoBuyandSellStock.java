@@ -1,4 +1,4 @@
-package org.cr.leetcode;
+package org.cr.leetcode.dynamicProgramming;
 
 /**
  * @author chenrui.a@mininglamp.com
@@ -45,8 +45,8 @@ public class _121BestTimetoBuyandSellStock {
     }
 
     /**
-     * The logic to solve this problem is same as "max subarray problem" using Kadane's Algorithm.
-     * Since no body has mentioned this so far, I thought it's a good thing for everybody to know.
+     * The logic to solve this problem is same as "max subarray problem" using Kadane's Algorithm. {@link _53MaximumSubarray}
+     * Since nobody has mentioned this so far, I thought it's a good thing for everybody to know.
      *
      * All the straight forward solution should work,
      * but if the interviewer twists the question slightly by giving the difference array of prices,

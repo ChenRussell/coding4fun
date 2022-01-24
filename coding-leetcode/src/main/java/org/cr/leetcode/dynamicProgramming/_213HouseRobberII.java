@@ -25,7 +25,7 @@ package org.cr.leetcode.dynamicProgramming;
  * Explanation: Rob house 1 (money = 1) and then rob house 3 (money = 3).
  * Total amount you can rob = 1 + 3 = 4.
  */
-public class _213HouseRooberII {
+public class _213HouseRobberII {
 
     public int rob(int[] nums) {
         if(nums.length==1) return nums[0];
@@ -67,7 +67,7 @@ public class _213HouseRooberII {
     }
 
     public static void main(String[] args) {
-        _213HouseRooberII houseRooberII = new _213HouseRooberII();
+        _213HouseRobberII houseRooberII = new _213HouseRobberII();
         int res = houseRooberII.rob(new int[]{2,1,1,2});
         System.out.println(res);
     }
