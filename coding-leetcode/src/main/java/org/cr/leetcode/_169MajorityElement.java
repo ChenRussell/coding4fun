@@ -40,7 +40,7 @@ public class _169MajorityElement {
                 count++;
             } else {
                 count--;
-                if (count < 0) {
+                if (count < 0) { // count == 0р╡©ирт
                     res = nums[i];
                     count = 1;
                 }

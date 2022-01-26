@@ -28,12 +28,24 @@ package org.cr.leetcode;
  */
 public class _215KthLargestElementinanArray {
 
+    public int findKthLargest_20220126(int[] nums, int k) {
+        int low = 0, high = nums.length-1;
+        k = nums.length - k;
+        int index = -1;
+        while(index != k) {
+            index = partition(nums, low, high);
+            if(index < k) low = index+1;
+            else if(index > k) high = index-1;
+        }
+        return nums[index];
+    }
+
     public int findKthLargest(int[] nums, int k) {
         int low = 0, high = nums.length - 1;
         k = nums.length - k;
         int index = partition(nums, low, high);
-        while (index != k - 1) {
-            if (index < k - 1) {
+        while (index != k) {
+            if (index < k) {
                 low = index + 1;
                 index = partition(nums, low, high);
             } else {

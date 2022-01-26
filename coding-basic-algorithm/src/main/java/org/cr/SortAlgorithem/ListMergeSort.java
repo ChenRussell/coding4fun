@@ -38,7 +38,7 @@ public class ListMergeSort {
         ListNode slow = head.next;
         ListNode prev = head;
 
-        while (true) {
+        while (true) { // 这种判断方式不优雅，fast != null && fast.next != null
             if (fast == null) break;
             fast = fast.next;
             if (fast == null) break;
