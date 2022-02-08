@@ -34,7 +34,24 @@ public class _134GasStation {
         return startIndex;
     }
 
-    public static void main(String[] args) {
+    public int canCompleteCircuit2(int[] gas, int[] cost) {
+        int n = gas.length;
+        for(int i = 0; i < n; i++){
+            int totalFuel = 0;
+            int stopCount = 0, j = i;
+            while(stopCount < n){
+                totalFuel += gas[j % n] - cost[j % n];
+                if(totalFuel < 0) break; // whenever we reach -ve
+                stopCount++;
+                j++;
+            }
+            if(stopCount == n && totalFuel >= 0) return i; // cover all the stops & our fuel left is 0 or more than that
+        }
+        return -1;
+    }
+
+
+        public static void main(String[] args) {
         int gas[] = {8,5,6};
         int cost[] = {6,8,5};
         int res = new _134GasStation().canCompleteCircuit(gas, cost);
