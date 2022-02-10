@@ -19,13 +19,12 @@ package org.cr.leetcode;
 public class _26RemoveDuplicatesFromSortedArray {
 
     public int removeDuplicates(int[] nums) {
-        int count = 1;
-        for (int i = 0; i < nums.length-1; i++) {
-            if (nums[i] != nums[i + 1]) {
-                count++;
-            }
+        int count = 0; // 统计多余的数量
+        for (int i = 1; i < nums.length; i++) {
+            if(nums[i] == nums[i-1]) count++;
+            else nums[i-count] = nums[i];
         }
-        return count;
+        return nums.length - count;
     }
 
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package org.cr.leetcode.dynamicProgramming;
+package org.cr.leetcode.backpack;
 
 import java.util.Arrays;
 
@@ -30,6 +30,10 @@ import java.util.Arrays;
  * 1 <= n <= 104
  */
 public class _279PerfectSquares {
+
+    /**
+     * 背包问题的变种，与{@link _322CoinChange}类似，只不过该问题中没有一个weight数组
+     */
     public int numSquares(int n) {
         int[] dp = new int[n+1];
         Arrays.fill(dp, Integer.MAX_VALUE);

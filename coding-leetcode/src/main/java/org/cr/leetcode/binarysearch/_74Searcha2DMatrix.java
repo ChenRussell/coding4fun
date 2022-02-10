@@ -1,4 +1,4 @@
-package org.cr.leetcode;
+package org.cr.leetcode.binarysearch;
 
 /**
  * @author chenrui.a@mininglamp.com

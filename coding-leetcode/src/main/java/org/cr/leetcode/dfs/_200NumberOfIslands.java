@@ -1,4 +1,6 @@
-package org.cr.leetcode;
+package org.cr.leetcode.dfs;
+
+import org.cr.leetcode.dfs._79WordSearch;
 
 /**
  * @author chenrui.a@mininglamp.com
@@ -40,6 +42,9 @@ package org.cr.leetcode;
  */
 public class _200NumberOfIslands {
 
+    /**
+     * 与{@link _79WordSearch}思路类似
+     */
     public int numIslands(char[][] grid) {
         int count = 0, row = grid.length - 1, col = grid[0].length - 1;
         for (int i = 0; i <= row; i++) {

@@ -1,4 +1,4 @@
-package org.cr.leetcode;
+package org.cr.leetcode.stack;
 
 import java.util.Stack;
 

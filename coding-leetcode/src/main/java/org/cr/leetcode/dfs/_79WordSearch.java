@@ -1,4 +1,4 @@
-package org.cr.leetcode;
+package org.cr.leetcode.dfs;
 
 /**
  * @author chenrui.a@mininglamp.com
