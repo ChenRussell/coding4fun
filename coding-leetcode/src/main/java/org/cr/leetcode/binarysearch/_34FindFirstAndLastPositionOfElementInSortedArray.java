@@ -57,6 +57,48 @@ public class _34FindFirstAndLastPositionOfElementInSortedArray {
         return new int[]{head, tail};
     }
 
+    public int[] searchRange2(int[] nums, int target) {
+        return new int[]{findLeft(nums, target), findRight(nums,target)};
+    }
+
+    int findLeft(int[] nums,int target) {
+        int low = 0, high = nums.length-1;
+        while(low <= high) {
+            int middle = (low + high) >> 1;
+            if(target < nums[middle]) {
+                high = middle-1;
+            } else if(target > nums[middle]) {
+                low = middle+1;
+            } else {
+                if(middle == 0 || nums[middle] != nums[middle-1]){
+                    return middle;
+                } else {
+                    high = middle-1;
+                }
+            }
+        }
+        return -1;
+    }
+
+    int findRight(int[] nums,int target) {
+        int low = 0, high = nums.length-1;
+        while(low <= high) {
+            int middle = (low + high) >> 1;
+            if(target < nums[middle]) {
+                high = middle-1;
+            } else if(target > nums[middle]) {
+                low = middle+1;
+            } else {
+                if(middle == nums.length-1 || nums[middle] != nums[middle+1]){
+                    return middle;
+                } else {
+                    low = middle+1;
+                }
+            }
+        }
+        return -1;
+    }
+
     public static void main(String[] args) {
         _34FindFirstAndLastPositionOfElementInSortedArray obj = new _34FindFirstAndLastPositionOfElementInSortedArray();
         int[] res = obj.searchRange(new int[]{5, 7, 7, 8, 8, 10}, 8);

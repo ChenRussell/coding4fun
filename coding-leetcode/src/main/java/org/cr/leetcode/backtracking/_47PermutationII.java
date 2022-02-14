@@ -36,7 +36,7 @@ public class _47PermutationII {
             for (int i = 0; i < nums.length; i++) {
 
                 // 第二个条件是为了防止重复的元素，如： 1,2(1),2(2) 和 1,2(2),2(1), 只能算一个,used[i-1]取不取反都可以，相当于选择了其中一个排列方式
-                if (used[i] || i>1 && nums[i] == nums[i-1] && !used[i-1]) continue;  // 用一个used数组维护该位置的元素是否被访问
+                if (used[i] || i>=1 && nums[i] == nums[i-1] && !used[i-1]) continue;  // 用一个used数组维护该位置的元素是否被访问
                 tempList.add(nums[i]);
                 used[i] = true;
                 backTracking(res, tempList, nums, used, i + 1);

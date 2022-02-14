@@ -55,12 +55,13 @@ public class _416PartitionEqualSubsetSum {
         }
         // 判断是否为奇数
         if ((sum & 1) != 0) return false;
-        int volumn = sum / 2;   // 背包的大小
+        int volume = sum / 2;   // 背包的大小
 
-        boolean dp[][] = new boolean[nums.length][volumn + 1]; // 第一列不用
+        // dp[i][j]表示前i个元素能否凑成和为背包大小j
+        boolean dp[][] = new boolean[nums.length][volume + 1]; // 第一列不用
 
         // 初始化dp数组
-//        for (int j = 0; j < volumn+1; j++) {
+//        for (int j = 0; j < volume+1; j++) {
 ////            dp[0][j] = false;
 //            if (j >= nums[0]) dp[0][j] = true;
 //        }
@@ -71,12 +72,12 @@ public class _416PartitionEqualSubsetSum {
             dp[i][0] = true;
         }
         // 第一行赋值false
-//        for (int j = 1; j < volumn+1; j++) {
+//        for (int j = 1; j < volume+1; j++) {
 //            dp[0][j] = false;
 //        }
 
         for (int i = 1; i < nums.length; i++) {
-            for (int j = 1; j <= volumn; j++) {
+            for (int j = 1; j <= volume; j++) {
                 if (j < nums[i]) dp[i][j] = dp[i - 1][j];
                 else dp[i][j] = dp[i - 1][j] || dp[i - 1][j - nums[i]];
             }
@@ -88,7 +89,7 @@ public class _416PartitionEqualSubsetSum {
             }
             System.out.println();
         }
-        return dp[nums.length - 1][volumn];
+        return dp[nums.length - 1][volume];
     }
 
     // 使用一维数组
@@ -101,14 +102,14 @@ public class _416PartitionEqualSubsetSum {
         if ((sum & 1) == 1) return false;
 
         // 背包大小
-        int volumn = sum / 2;
+        int volume = sum / 2;
 
         // dp[j]表示背包大小为j时，能不能装满
-        boolean dp[] = new boolean[volumn + 1];
+        boolean dp[] = new boolean[volume + 1];
         dp[0] = true;
 
         for (int i = 0; i < nums.length; i++) {
-            for (int j = volumn; j > 0; j--) {  // 包的循环应该在里面，每次更新dp数组
+            for (int j = volume; j > 0; j--) {  // 包的循环应该在里面，每次更新dp数组
                 if (j >= nums[i]) dp[j] = dp[j] || dp[j - nums[i]]; // 懵逼
             }
 
@@ -117,7 +118,7 @@ public class _416PartitionEqualSubsetSum {
             }
             System.out.println();
         }
-        return dp[volumn];
+        return dp[volume];
     }
 
 

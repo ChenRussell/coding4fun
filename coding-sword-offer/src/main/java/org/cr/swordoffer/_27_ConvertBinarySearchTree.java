@@ -40,6 +40,32 @@ public class _27_ConvertBinarySearchTree {
         }
     }
 
+    /**
+     * Ê×Î²ÏàÁ¬
+     */
+    TreeNode pLastVisited, head;
+    public TreeNode treeToDoublyList(TreeNode root) {
+        if(root == null) return null;
+        transform(root);
+        head.left = pLastVisited;
+        pLastVisited.right = head;
+        return head;
+    }
+
+    public void transform(TreeNode node) {
+        if(node != null) {
+            transform(node.left);
+            if(pLastVisited != null) {
+                pLastVisited.right = node;
+            } else {
+                head = node;
+            }
+            node.left = pLastVisited;
+            pLastVisited = node;
+            transform(node.right);
+        }
+    }
+
     public static void main(String[] args) {
         TreeNode node = new TreeNode(2);
         node.left = new TreeNode(1);

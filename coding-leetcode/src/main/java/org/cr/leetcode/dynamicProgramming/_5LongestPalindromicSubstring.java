@@ -43,7 +43,7 @@ public class _5LongestPalindromicSubstring {
         String res = null;
 
         boolean[][] dp = new boolean[n][n];
-
+        // 循环方式需要注意：求dp[i][j]时，需保证dp[i+1][j-1]已经被赋值过
         for (int i = n - 1; i >= 0; i--) {
             for (int j = i; j < n; j++) {
                 dp[i][j] = s.charAt(i) == s.charAt(j) && (j - i < 3 || dp[i + 1][j - 1]);

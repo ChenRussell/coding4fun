@@ -54,6 +54,12 @@ public class _3LongestSubstringWithoutRepeatingCharacters {
         return max;
     }
 
+    /**
+     * 与下面的hashMap的方式思路是一致的，只不过实现方式稍有不同
+     * 对于bcaa这种情况，这种方法是一个一个字符的移动left指针，而hashMap是直接移动到第二个a
+     * @param s
+     * @return
+     */
     public int lengthOfLongestSubstring2(String s) {
         int n = s.length();
         Set<Character> set = new HashSet<>();
@@ -83,6 +89,22 @@ public class _3LongestSubstringWithoutRepeatingCharacters {
             map.put(s.charAt(j), j + 1);
         }
         return ans;
+    }
+
+    public int lengthOfLongestSubstring4(String s) {
+        if (s.length()==0) return 0;
+        HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+        int max = 0;
+        int left = 0;
+        for(int i = 0; i < s.length(); i ++){
+            if(map.containsKey(s.charAt(i))){
+                left = Math.max(left,map.get(s.charAt(i)) + 1);
+            }
+            map.put(s.charAt(i),i);
+            max = Math.max(max,i-left+1);
+        }
+        return max;
+
     }
 
     public static void main(String[] args) {
