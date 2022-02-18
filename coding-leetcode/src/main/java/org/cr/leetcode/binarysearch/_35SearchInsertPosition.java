@@ -1,4 +1,4 @@
-package org.cr.leetcode;
+package org.cr.leetcode.binarysearch;
 
 /**
  * Created by ChenRui on 2018/9/16.
@@ -26,4 +26,15 @@ package org.cr.leetcode;
  * Output: 0
  */
 public class _35SearchInsertPosition {
+
+    public int searchInsert(int[] nums, int target) {
+        int low = 0, high = nums.length - 1, mid;
+        while(low <= high) {
+            mid = (low + high) >> 1;
+            if(nums[mid] == target) return mid;
+            else if(nums[mid] > target) high = mid-1;
+            else low = mid + 1;
+        }
+        return low;
+    }
 }
