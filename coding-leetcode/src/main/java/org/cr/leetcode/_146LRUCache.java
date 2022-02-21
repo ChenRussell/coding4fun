@@ -49,18 +49,18 @@ import java.util.Map;
  * 0 <= value <= 105
  * At most 2 * 105 calls will be made to get and put.
  */
-class Entry {
-    int key;
-    int val;
-    Entry pre;
-    Entry next;
-
-    public Entry(int key, int val) {
-        this.key = key;
-        this.val = val;
-    }
-}
 public class _146LRUCache {
+    class Entry {
+        int key;
+        int val;
+        Entry pre;
+        Entry next;
+
+        public Entry(int key, int val) {
+            this.key = key;
+            this.val = val;
+        }
+    }
 
     public Map<Integer, Entry> map;
     public final int capacity;
