@@ -1,9 +1,6 @@
 package org.cr.leetcode.bfs;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by ChenRui on 18-4-2
@@ -47,7 +44,7 @@ public class _127LabberLength_update {
         // 访问过的节点 hashset
         HashSet<String> visited = new HashSet<>();
         int len = 1;
-
+        Set<String> dict = new HashSet<>(wordList);
         if (!wordList.contains(endWord)) return 0;  // 如果endWord不包含在内，return 0
         while (!beginSet.isEmpty()) {
             HashSet<String> temp = new HashSet<>(); // 定义临时的hashset,用来存储某一层的节点
@@ -65,7 +62,7 @@ public class _127LabberLength_update {
                             return len+1;
                         }
 
-                        if (!visited.contains(changedBeginStr) && wordList.contains(changedBeginStr)) {
+                        if (!visited.contains(changedBeginStr) && dict.contains(changedBeginStr)) {
                             visited.add(changedBeginStr);
                             temp.add(changedBeginStr);
                         }

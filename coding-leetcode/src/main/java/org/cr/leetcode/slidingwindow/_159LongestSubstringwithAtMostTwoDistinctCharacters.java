@@ -11,7 +11,7 @@ public class _159LongestSubstringwithAtMostTwoDistinctCharacters {
 
     public int lengthOfLongestSubstringTwoDistinct(String s) {
         int[] map = new int[128];
-        int start = 0, end = 0, maxLen = 0, counter = 0; // counter表示不同字符的个数
+        int start = 0, end = 0, maxLen = 0, counter = 0; // counter表示当前窗口内不同字符的个数
 
         while (end < s.length()) {
             final char c1 = s.charAt(end);

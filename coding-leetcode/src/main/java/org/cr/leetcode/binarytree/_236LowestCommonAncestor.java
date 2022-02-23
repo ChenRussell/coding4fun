@@ -1,5 +1,9 @@
 package org.cr.leetcode.binarytree;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
+
 /**
  * Created by ChenRui on 2018/9/28.
  * <p>
@@ -57,6 +61,39 @@ public class _236LowestCommonAncestor {
         } else return left;
     }
 
+    /**
+     * 找到两条路径，返回最后一个相等的元素
+     */
+    public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
+        Stack<TreeNode> stack1 = new Stack<>();
+        List<List<TreeNode>> path = new ArrayList<>();
+        findPath(root, p, q, stack1, path);
+        List<TreeNode> path1 = path.get(0);
+        List<TreeNode> path2 = path.get(1);
+        System.out.println(path1);
+        System.out.println(path2);
+        int idx = 0;
+        while (idx < path1.size() && idx < path2.size()) {
+            if (path1.get(idx).val == path2.get(idx).val) {
+                idx++;
+            } else {
+                break;
+            }
+        }
+        return idx == 0 ? null : path1.get(idx - 1);
+    }
+
+    private void findPath(TreeNode node, TreeNode p,TreeNode q, Stack<TreeNode> stack, List<List<TreeNode>> path) {
+        if (node == null) return;
+        stack.push(node);
+        if (node == p || node == q) {
+            path.add(new ArrayList<>(stack));
+        }
+        findPath(node.left, p, q, stack, path);
+        findPath(node.right, p, q, stack, path);
+        stack.pop();
+    }
+
     public static void main(String[] args) {
         TreeNode node = new TreeNode(2);
         node.left = new TreeNode(1);
@@ -64,7 +101,7 @@ public class _236LowestCommonAncestor {
         node.left.left = new TreeNode(4);
 
         _236LowestCommonAncestor lowestCommonAncestor = new _236LowestCommonAncestor();
-        TreeNode treeNode = lowestCommonAncestor.lowestCommonAncestor(node, node.right, node.left.left);
+        TreeNode treeNode = lowestCommonAncestor.lowestCommonAncestor2(node, node.right, node.left.left);
         System.out.println(treeNode.val);
     }
 }

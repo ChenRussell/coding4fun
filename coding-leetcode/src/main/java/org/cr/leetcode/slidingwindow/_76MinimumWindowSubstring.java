@@ -53,30 +53,29 @@ public class _76MinimumWindowSubstring {
      */
     public String minWindow(String s, String t) {
         int[] map = new int[128];
-        char[] arr2 = t.toCharArray();
-        for (char ch : arr2) {
+        for (char ch : t.toCharArray()) {
             map[ch]++;
         }
         char[] arr = s.toCharArray();
         // counter represents the number of chars of t to be found in s.
-        int counter = t.length(), left = 0, right = 0, minLen = Integer.MAX_VALUE, minStart = 0;
+        int counter = t.length(), start = 0, end = 0, minLen = Integer.MAX_VALUE, minStart = 0;
         // Move end to find a valid window.
-        while (right < s.length()) {
+        while (end < s.length()) {
             // If char in s exists in t, decrease counter
-            if (map[arr[right]] > 0) counter--;
+            if (map[arr[end]] > 0) counter--;
             // Decrease m[s[end]]. If char does not exist in t, m[s[end]] will be negative.
-            map[arr[right]]--;
-            right++;
+            map[arr[end]]--;
+            end++;
             // When we found a valid window, move start to find smaller window.
             while (counter == 0) {
-                if (right - left < minLen) {
-                    minLen = right - left;
-                    minStart = left;
+                if (end - start < minLen) {
+                    minLen = end - start;
+                    minStart = start;
                 }
-                map[arr[left]]++;
-                // When char exists in t, increase counter.
-                if (map[arr[left]] > 0) counter++;
-                left++;
+                map[arr[start]]++;
+                // When char exists in t, increase counter. 说明left指针右移后，少了一个在t里的字符
+                if (map[arr[start]] > 0) counter++;
+                start++;
             }
         }
         return minLen == Integer.MAX_VALUE ? "" : s.substring(minStart, minStart + minLen);
