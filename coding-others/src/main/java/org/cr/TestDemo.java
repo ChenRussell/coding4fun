@@ -833,6 +833,24 @@ public class TestDemo implements Cloneable, Serializable{
         System.out.println(true && false);
     }
 
+    @Test
+    public void testQueue() {
+        Queue<Integer> q1 = new ArrayDeque<>();
+        Queue<Integer> q2 = new LinkedList<>();
+        int N = 10000000;
+        long start1 = System.currentTimeMillis();
+        for (int i = 0; i < N; i++) {
+            q1.offer(i);
+        }
+        System.out.println((System.currentTimeMillis() - start1) + " ms");
+
+        long start2 = System.currentTimeMillis();
+        for (int i = 0; i < N; i++) {
+            q2.offer(i);
+        }
+        System.out.println((System.currentTimeMillis() - start2) + " ms");
+    }
+
     @Override
     public String toString() {
         return "org.cr.TestDemo{this is org.cr.TestDemo class, haha, fuck you}";

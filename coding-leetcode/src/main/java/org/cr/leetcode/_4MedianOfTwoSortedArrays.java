@@ -22,37 +22,34 @@ import java.util.Collections;
  * The median is (2 + 3)/2 = 2.5
  */
 public class _4MedianOfTwoSortedArrays {
+
+    /**
+     * 时间复杂度为O(m+n)，不符合题目要求
+     */
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
-//        TreeSet<Integer> set = new TreeSet<>();
-        ArrayList<Integer> set = new ArrayList<>();
-        for (int i = 0; i < nums1.length; i++) {
-            set.add(nums1[i]);
+        int m = nums1.length, n = nums2.length;
+        int[] nums = new int[m+n];
+        int idx1 = 0, idx2 = 0, idx = 0;
+        while(idx1 < m && idx2 < n) {
+            if(nums1[idx1] < nums2[idx2]) {
+                nums[idx++] = nums1[idx1++];
+            } else {
+                nums[idx++] = nums2[idx2++];
+            }
         }
-        for (int i = 0; i < nums2.length; i++) {
-            set.add(nums2[i]);
+        while(idx1 < m) {
+            nums[idx++] = nums1[idx1++];
         }
-        Collections.sort(set);
-        int count = 0;
-        int result = 0;
-        int mode = set.size() % 2;
-        int divide = set.size() / 2;
-//        for (Integer i :
-//                set) {
-//            count++;
-//
-//            if (mode == 0 && count== divide){
-//                result += i;
-//            }
-//            if (mode == 0 && count == divide + 1) {
-//                result += i;
-//                return result/2.0;
-//            }
-//            if (mode == 1 && count==divide+1) {
-//                return i;
-//            }
-//        }
-        if(mode == 0) return (set.get(divide)+set.get(divide-1))/2.0;
-        else return set.get(divide);
+        while(idx2 < n) {
+            nums[idx++] = nums2[idx2++];
+        }
+        int size = m + n;
+        if(size == 0) return 0;
+        if((size & 1) == 1) {
+            return nums[size / 2] * 1.0;
+        } else {
+            return (nums[size/2] + nums[size/2-1])/ 2.0;
+        }
     }
 
     public static void main(String[] args) {

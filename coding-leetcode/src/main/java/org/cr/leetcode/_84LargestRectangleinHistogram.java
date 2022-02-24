@@ -1,5 +1,9 @@
 package org.cr.leetcode;
 
+import java.util.ArrayDeque;
+import java.util.Arrays;
+import java.util.Deque;
+
 /**
  * @author chenrui.a@mininglamp.com
  * @project coding4fun
@@ -35,7 +39,7 @@ public class _84LargestRectangleinHistogram {
         int[] lessFromLeft = new int[heights.length];// idx of the first bar the left that is lower than current
         int[] lessFromRight = new int[heights.length];// idx of the first bar the right that is lower than current
         lessFromLeft[0] = -1;
-        lessFromRight[heights.length-1] = heights.length;
+        lessFromRight[heights.length - 1] = heights.length;
         for (int i = 1; i < heights.length; i++) {
             int p = i - 1;
             while (p >= 0 && heights[p] >= heights[i]) {
@@ -53,6 +57,53 @@ public class _84LargestRectangleinHistogram {
 
         for (int i = 0; i < heights.length; i++) {
             res = Math.max(res, heights[i] * (lessFromRight[i] - lessFromLeft[i] - 1));
+        }
+        return res;
+    }
+
+    public int largestRectangleArea_stack(int[] heights) {
+        int res = 0, len = heights.length;
+        int[] left = new int[len];
+        int[] right = new int[len];
+        Deque<Integer> stack = new ArrayDeque<>();
+        for (int i = 0; i < len; ++i) {
+            while (!stack.isEmpty() && heights[stack.peek()] >= heights[i]) {
+                stack.pop();
+            }
+            left[i] = stack.isEmpty() ? -1 : stack.peek();
+            stack.push(i);
+        }
+        stack.clear();
+        for (int i = len - 1; i >= 0; --i) {
+            while (!stack.isEmpty() && heights[stack.peek()] >= heights[i]) {
+                stack.pop();
+            }
+            right[i] = stack.isEmpty() ? len : stack.peek();
+            stack.push(i);
+        }
+        for (int i = 0; i < len; ++i) {
+            res = Math.max(res, (right[i] - left[i] - 1) * heights[i]);
+        }
+        return res;
+    }
+
+    // 单次循环解决
+    public int largestRectangleArea_stack2(int[] heights) {
+        int res = 0, len = heights.length;
+        int[] left = new int[len];
+        int[] right = new int[len];
+        Arrays.fill(right, len);
+        Deque<Integer> stack = new ArrayDeque<>();
+        for (int i = 0; i < len; ++i) {
+            while (!stack.isEmpty() && heights[stack.peek()] >= heights[i]) {
+                right[stack.peek()] = i;
+                stack.pop();
+            }
+            left[i] = stack.isEmpty() ? -1 : stack.peek();
+            stack.push(i);
+        }
+        for (int i = 0; i < len; ++i) {
+            res = Math.max(res, (right[i] - left[i] - 1) * heights[i]);
         }
         return res;
     }
