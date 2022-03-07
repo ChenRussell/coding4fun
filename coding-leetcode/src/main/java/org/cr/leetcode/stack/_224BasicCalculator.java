@@ -47,7 +47,7 @@ public class _224BasicCalculator {
             char c = s.charAt(i);
             if (Character.isDigit(c)) {
                 num = num * 10 + s.charAt(i) - '0';
-            } else if (c == '+') {
+            } else if (c == '+') { // 碰到+/-结算前面的部分
                 res += sign * num;
                 sign = 1;
                 num = 0;

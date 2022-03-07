@@ -1,4 +1,4 @@
-package org.cr.leetcode;
+package org.cr.leetcode.datastructure;
 
 import java.util.HashMap;
 import java.util.Map;

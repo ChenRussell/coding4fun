@@ -1,4 +1,4 @@
-package org.cr.leetcode;
+package org.cr.leetcode.datastructure;
 
 /**
  * @author chenrui.a@mininglamp.com

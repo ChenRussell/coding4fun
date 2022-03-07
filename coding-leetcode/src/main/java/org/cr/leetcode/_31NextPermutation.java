@@ -67,10 +67,11 @@ public class _31NextPermutation {
 
     /**
      * 思路：倒序找到第一个比当前元素小的元素i，交换元素位置，然后对i后面的元素重新做升序排序
+     * 注意循环方式，不是一直往前走，case: [4,2,0,2,3,2,0] -> result: [4,2,0,3,0,2,2], 而不是[4,2,2,0,0,2,3]
      * @param arr
      */
     public void nextPermutation2(int arr[]) {
-        for (int i = arr.length-1; i >= 0; i--) {
+        for (int i = arr.length-1; i >= 0; i--) { // i限定范围
             for (int j = arr.length-1; j > i; j--) {
                 if (arr[i] < arr[j]) {
                     swap(arr, i, j);

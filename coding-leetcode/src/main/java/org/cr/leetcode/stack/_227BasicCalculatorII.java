@@ -52,7 +52,7 @@ public class _227BasicCalculatorII {
             }
             // 当i遍历到最后一个字符时，需要进行计算
             if (!Character.isDigit(s.charAt(i)) && s.charAt(i) != ' ' || i == s.length() - 1) {
-                if (sign == '+') {
+                if (sign == '+') { // sign不是当前遍历的字符，是之前记录的符号
                     stack.push(num);
                 } else if (sign == '-') {
                     stack.push(-num);
