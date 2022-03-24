@@ -86,7 +86,7 @@ public class _79WordSearch {
     }
 
     private boolean exist2(char[][] board, int y, int x, char[] word, int i) {
-        if (i == word.length) return true;
+        if (i == word.length) return true; // 这个判断条件得放在前面
         if (y<0 || x<0 || y == board.length || x == board[y].length) return false;
         if (board[y][x] != word[i]) return false;
 //        board[y][x] ^= 256;

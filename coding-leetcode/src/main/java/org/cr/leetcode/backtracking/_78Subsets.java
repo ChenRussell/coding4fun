@@ -48,7 +48,7 @@ public class _78Subsets {
 
 //        if (start >= nums.length) return;   // 递归边界
 
-        res.add(new ArrayList<>(tempList)); // 啥时候add
+        res.add(new ArrayList<>(tempList)); // 不用判断是否包含，因为只会与当前元素后面的去组合
 
         for (int i = start; i < nums.length; i++) {
 

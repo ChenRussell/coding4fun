@@ -69,7 +69,7 @@ public class _76MinimumWindowSubstring {
             // When we found a valid window, move start to find smaller window.
             while (counter == 0) {
                 if (end - start < minLen) {
-                    minLen = end - start;
+                    minLen = end - start; // 这里不是end-start+1, 是因为上面执行了end++
                     minStart = start;
                 }
                 map[arr[start]]++;
