@@ -46,7 +46,7 @@ public class _142LinkedListCycleII {
 
     public ListNode detectCycle(ListNode head) {
         if (head == null || head.next == null) return null;
-        ListNode slow = head, fast = head;
+        ListNode slow = head, fast = head; // 起点位置必须相同才符合后面的公式
         while (fast.next != null) {
             slow = slow.next;
             fast = fast.next;

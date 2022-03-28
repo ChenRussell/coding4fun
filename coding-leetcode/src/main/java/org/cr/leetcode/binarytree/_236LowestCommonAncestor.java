@@ -54,6 +54,7 @@ public class _236LowestCommonAncestor {
 
         TreeNode left = lowestCommonAncestor(root.left, p, q);
         TreeNode right = lowestCommonAncestor(root.right, p, q);
+        // left不为空说明有一个节点在左子树，right不为空说明有一个节点在右子树
         if (left != null && right != null) {
             return root;
         } else if (left == null) {

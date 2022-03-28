@@ -9,6 +9,9 @@ package org.cr.leetcode.dynamicProgramming;
  * Another example is ")()())", where the longest valid parentheses substring is "()()", which has length = 4.
  */
 public class _32LongestValidParentheses {
+    /**
+     * dp[i]  表示以下标i字符结尾的最长有效括号的长度
+     */
     public int longestValidParentheses(String s) {
         int maxans = 0;
         int dp[] = new int[s.length()];
@@ -27,7 +30,7 @@ public class _32LongestValidParentheses {
 
     public static void main(String[] args) {
         _32LongestValidParentheses obj = new _32LongestValidParentheses();
-        int result = obj.longestValidParentheses("()()(())");   //4
+        int result = obj.longestValidParentheses("()()(())");   //8
         System.out.println(result);
     }
 }

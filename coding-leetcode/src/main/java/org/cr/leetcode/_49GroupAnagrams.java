@@ -53,4 +53,12 @@ public class _49GroupAnagrams {
         }
         return new ArrayList<>(map.values());
     }
+
+    public static void main(String[] args) {
+        char[] arr = new char[2];
+        arr[0] = 73;
+        arr[1] = 2;
+        System.out.println(arr[0]);
+        System.out.println(arr[1]);
+    }
 }
