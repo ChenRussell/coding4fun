@@ -52,7 +52,7 @@ public class _494TargetSum {
         int[] dp = new int[target + 1];
         dp[0] = 1; // 初始值很关键
         for(int i = 0; i < nums.length; i++) {
-            for(int j = target; j >= 0; j--) {
+            for(int j = target; j >= 0; j--) { // j>=0, 不能是j>0, 应对元素为0的情况
                 if(j >= nums[i]) {
                     dp[j] = dp[j] + dp[j - nums[i]];
                 }
