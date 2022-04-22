@@ -74,4 +74,23 @@ public class _92ReverseLinkedListII {
             return tail;
         }
     }
+
+    public ListNode reverseBetween_voted(ListNode head, int left, int right) {
+        // 因为头节点有可能发生变化，使用虚拟头节点可以避免复杂的分类讨论
+        ListNode dummyNode = new ListNode(-1);
+        dummyNode.next = head;
+        ListNode pre = dummyNode;
+        for (int i = 0; i < left - 1; i++) {
+            pre = pre.next;
+        }
+        ListNode cur = pre.next;
+        ListNode next;
+        for (int i = 0; i < right - left; i++) {
+            next = cur.next;
+            cur.next = next.next; // 执行顺序在前
+            next.next = pre.next; // 不能是next.next = cur
+            pre.next = next;
+        }
+        return dummyNode.next;
+    }
 }
