@@ -4,7 +4,7 @@ package org.cr.leetcode.binarytree;
 import org.cr.leetcode.linkedlist.ListNode;
 
 /**
- * @author chenrui.a@mininglamp.com
+ * @author russ
  * @project coding4fun
  * @date 2021/08/27
  *

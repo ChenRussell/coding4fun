@@ -1,7 +1,7 @@
 package org.cr.leetcode.backpack;
 
 /**
- * @author chenrui.a@mininglamp.com
+ * @author russ
  * @project coding4fun
  * @date 2022/02/22
  *

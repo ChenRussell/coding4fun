@@ -3,7 +3,7 @@ package org.cr.leetcode.priorityqueue;
 import java.util.*;
 
 /**
- * @author chenrui.a@mininglamp.com
+ * @author russ
  * @project coding4fun
  * @date 2022/02/10
  *

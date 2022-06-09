@@ -3,7 +3,7 @@ package org.cr.juc.kkb;
 import java.util.concurrent.Phaser;
 
 /**
- * @author chenrui.a@mininglamp.com
+ * @author russ
  * @project coding-for-offer
  * @date 2021/07/08
  */

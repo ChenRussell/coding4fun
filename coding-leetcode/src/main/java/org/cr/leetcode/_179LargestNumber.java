@@ -3,7 +3,7 @@ package org.cr.leetcode;
 import java.util.Arrays;
 
 /**
- * @author chenrui.a@mininglamp.com
+ * @author russ
  * @project coding4fun
  * @date 2022/01/26
  *

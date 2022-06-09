@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Stack;
 
 /**
- * @author chenrui.a@mininglamp.com
+ * @author russ
  * @project coding4fun
  * @date 2021/09/15
  *

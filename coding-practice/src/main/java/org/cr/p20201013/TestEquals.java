@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Objects;
 
 /**
- * @author chenrui.a@mininglamp.com
+ * @author russ
  * @project coding4fun
  * @date 2022/02/23
  */

@@ -3,7 +3,7 @@ package org.cr.leetcode.stack;
 import java.util.Stack;
 
 /**
- * @author chenrui.a@mininglamp.com
+ * @author russ
  * @project coding4fun
  * @date 2022/02/09
  *

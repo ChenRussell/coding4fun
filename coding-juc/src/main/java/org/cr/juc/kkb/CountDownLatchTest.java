@@ -5,7 +5,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * @author chenrui.a@mininglamp.com
+ * @author russ
  * @project coding-for-offer
  * @date 2021/07/08
  */

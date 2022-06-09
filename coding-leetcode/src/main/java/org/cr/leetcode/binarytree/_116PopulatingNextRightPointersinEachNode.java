@@ -1,7 +1,7 @@
 package org.cr.leetcode.binarytree;
 
 /**
- * @author chenrui.a@mininglamp.com
+ * @author russ
  * @project coding4fun
  * @date 2022/01/27
  *

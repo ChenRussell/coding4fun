@@ -1,7 +1,7 @@
 package org.cr.jvm.chapter12;
 
 /**
- * @author chenrui.a@mininglamp.com
+ * @author russ
  * @project coding4fun
  * @date 2022/01/06
  */
